@@ -1,0 +1,8 @@
+failure_type,count,auc,brier,recovery_rate
+card_expired,795,0.7273,0.0524,0.0579
+customer_abandoned,1015,0.6416,0.0478,0.0512
+insufficient_funds,425,0.5882,0.0612,0.0659
+network_timeout,1580,0.6454,0.206,0.3228
+risk_block,280,0.5216,0.0071,0.0071
+subscription_mandate_fail,485,0.6666,0.0477,0.0515
+temporary_bank_decline,3462,0.6685,0.1691,0.2377

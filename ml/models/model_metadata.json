@@ -1,0 +1,134 @@
+{
+  "model_type": "LogisticRegression",
+  "model_variant": "action-conditional (action is a feature)",
+  "training_date": "2026-08-23T20:47:08.360025",
+  "random_state": 42,
+  "hyperparameters": {
+    "C": 10.0,
+    "class_weight": "None",
+    "penalty": "l2",
+    "solver": "lbfgs",
+    "max_iter": 2000
+  },
+  "features": {
+    "categorical": [
+      "failure_type",
+      "action",
+      "segment",
+      "payment_method",
+      "failure_action",
+      "segment_action"
+    ],
+    "numeric_raw": [
+      "risk_score",
+      "attempt_number",
+      "contact_fatigue_score",
+      "amount",
+      "lifetime_successful_txns",
+      "lifetime_failed_txns"
+    ],
+    "log1p_transforms": [
+      "amount",
+      "lifetime_successful_txns",
+      "lifetime_failed_txns"
+    ],
+    "total_feature_columns": 12
+  },
+  "data": {
+    "source": "action_expanded_training_data.csv",
+    "train_rows": 35645,
+    "val_rows": 7279,
+    "test_rows": 8042,
+    "total_rows": 50966,
+    "train_transactions": 6988,
+    "val_transactions": 1435,
+    "test_transactions": 1577
+  },
+  "hyperparameter_search": [
+    {
+      "C": 0.01,
+      "class_weight": "None",
+      "val_brier": 0.127899,
+      "val_logloss": 0.40375,
+      "converged": true
+    },
+    {
+      "C": 0.01,
+      "class_weight": "balanced",
+      "val_brier": 0.20214,
+      "val_logloss": 0.581439,
+      "converged": true
+    },
+    {
+      "C": 0.1,
+      "class_weight": "None",
+      "val_brier": 0.127852,
+      "val_logloss": 0.402625,
+      "converged": true
+    },
+    {
+      "C": 0.1,
+      "class_weight": "balanced",
+      "val_brier": 0.203331,
+      "val_logloss": 0.580591,
+      "converged": true
+    },
+    {
+      "C": 1.0,
+      "class_weight": "None",
+      "val_brier": 0.127852,
+      "val_logloss": 0.402647,
+      "converged": true
+    },
+    {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "val_brier": 0.203601,
+      "val_logloss": 0.580602,
+      "converged": true
+    },
+    {
+      "C": 10.0,
+      "class_weight": "None",
+      "val_brier": 0.127841,
+      "val_logloss": 0.402683,
+      "converged": true
+    },
+    {
+      "C": 10.0,
+      "class_weight": "balanced",
+      "val_brier": 0.20367,
+      "val_logloss": 0.580704,
+      "converged": true
+    }
+  ],
+  "leakage_checks": {
+    "latent_score_absent": true,
+    "true_prob_HIDDEN_absent": true,
+    "outcome_not_input": true,
+    "customer_split_no_overlap": true,
+    "preprocessing_train_only": true,
+    "no_future_info": true,
+    "excluded_fields_absent": true,
+    "noise_absent": true,
+    "post_outcome_absent": true
+  },
+  "coefficient_sanity_checks": {
+    "card_expired__payment_link_positive": "True",
+    "sub_mandate_payment_link_positive": "True",
+    "risk_score_negative": "True",
+    "b2c_discount_gt_b2b": "True"
+  },
+  "excluded_fields": [
+    "transaction_id",
+    "customer_id",
+    "timestamp",
+    "split",
+    "event_type",
+    "avg_transaction_value",
+    "preferred_channel",
+    "latent_score",
+    "true_prob_HIDDEN",
+    "outcome"
+  ]
+}

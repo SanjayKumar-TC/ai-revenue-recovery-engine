@@ -1,0 +1,72 @@
+[
+  {
+    "bucket": "(-0.000737, 0.0223]",
+    "count": 805,
+    "mean_predicted": 0.0114,
+    "actual_rate": 0.0161,
+    "gap": 0.0047
+  },
+  {
+    "bucket": "(0.0223, 0.0423]",
+    "count": 804,
+    "mean_predicted": 0.0322,
+    "actual_rate": 0.0386,
+    "gap": 0.0064
+  },
+  {
+    "bucket": "(0.0423, 0.0726]",
+    "count": 804,
+    "mean_predicted": 0.0563,
+    "actual_rate": 0.0597,
+    "gap": 0.0034
+  },
+  {
+    "bucket": "(0.0726, 0.12]",
+    "count": 804,
+    "mean_predicted": 0.0951,
+    "actual_rate": 0.0846,
+    "gap": -0.0105
+  },
+  {
+    "bucket": "(0.12, 0.167]",
+    "count": 804,
+    "mean_predicted": 0.144,
+    "actual_rate": 0.148,
+    "gap": 0.004
+  },
+  {
+    "bucket": "(0.167, 0.213]",
+    "count": 804,
+    "mean_predicted": 0.19,
+    "actual_rate": 0.1803,
+    "gap": -0.0097
+  },
+  {
+    "bucket": "(0.213, 0.259]",
+    "count": 804,
+    "mean_predicted": 0.2358,
+    "actual_rate": 0.2226,
+    "gap": -0.0132
+  },
+  {
+    "bucket": "(0.259, 0.311]",
+    "count": 804,
+    "mean_predicted": 0.284,
+    "actual_rate": 0.3072,
+    "gap": 0.0232
+  },
+  {
+    "bucket": "(0.311, 0.39]",
+    "count": 804,
+    "mean_predicted": 0.3476,
+    "actual_rate": 0.3259,
+    "gap": -0.0217
+  },
+  {
+    "bucket": "(0.39, 0.732]",
+    "count": 805,
+    "mean_predicted": 0.4684,
+    "actual_rate": 0.4646,
+    "gap": -0.0038
+  }
+]

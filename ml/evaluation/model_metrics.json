@@ -1,0 +1,7 @@
+{
+  "roc_auc": 0.7607,
+  "pr_auc": 0.3981,
+  "log_loss": 0.4106,
+  "brier_score": 0.1308,
+  "accuracy": 0.8186
+}
