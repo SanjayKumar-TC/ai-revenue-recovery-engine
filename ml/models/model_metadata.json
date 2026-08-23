@@ -1,7 +1,7 @@
 {
   "model_type": "LogisticRegression",
   "model_variant": "action-conditional (action is a feature)",
-  "training_date": "2026-08-23T20:47:08.360025",
+  "training_date": "2026-08-23T21:03:57.715199",
   "random_state": 42,
   "hyperparameters": {
     "C": 10.0,
@@ -103,15 +103,16 @@
     }
   ],
   "leakage_checks": {
-    "latent_score_absent": true,
-    "true_prob_HIDDEN_absent": true,
-    "outcome_not_input": true,
-    "customer_split_no_overlap": true,
-    "preprocessing_train_only": true,
-    "no_future_info": true,
-    "excluded_fields_absent": true,
-    "noise_absent": true,
-    "post_outcome_absent": true
+    "1_latent_score_absent": true,
+    "2_hidden_probability_absent": true,
+    "3_noise_absent": true,
+    "4_post_outcome_absent": true,
+    "5_outcome_not_input": true,
+    "6_customer_no_overlap": true,
+    "7_preprocessing_train_only": true,
+    "8_test_not_used_for_selection": true,
+    "9_no_future_info": true,
+    "10_excluded_fields_absent": true
   },
   "coefficient_sanity_checks": {
     "card_expired__payment_link_positive": "True",

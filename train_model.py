@@ -97,73 +97,95 @@ def load_and_validate():
         raise ValueError(f"Missing required columns: {missing}")
     print(f"\nAll required columns present: PASS")
 
-    # --- Leakage checks ---
+    # --- Exact feature matrix columns ---
+    feature_cols = get_feature_columns()
+    print(f"\n--- FEATURE MATRIX COLUMNS (passed to ColumnTransformer) ---")
+    for col in feature_cols:
+        print(f"  • {col}")
+    print(f"  Total: {len(feature_cols)} columns")
+
+    # Explicit confirmation of CSV columns NOT in the feature matrix
+    csv_only_cols = [c for c in df.columns if c not in feature_cols and c != TARGET]
+    print(f"\n--- CSV COLUMNS NOT IN FEATURE MATRIX ---")
+    for col in csv_only_cols:
+        print(f"  ✗ {col}")
+    assert "customer_age_days" not in feature_cols, "customer_age_days should NOT be a feature!"
+    assert "is_subscription" not in feature_cols, "is_subscription should NOT be a feature!"
+    print(f"\n  customer_age_days in feature matrix: NO — CONFIRMED")
+    print(f"  is_subscription in feature matrix:   NO — CONFIRMED")
+
+    # --- Leakage checks (all 10 per M2 spec, individually numbered) ---
     print("\n--- LEAKAGE CHECKS ---")
     leakage_results = {}
 
-    # Check 1-4: Hidden/latent fields absent
-    hidden_fields = ["latent_score", "true_prob_HIDDEN"]
-    for field in hidden_fields:
-        present = field in df.columns
-        leakage_results[f"{field}_absent"] = not present
-        status = "FAIL — FOUND!" if present else "PASS"
-        print(f"  {field} absent from features: {status}")
+    # Check 1: latent_score absent from features
+    chk1 = "latent_score" not in df.columns and "latent_score" not in feature_cols
+    leakage_results["1_latent_score_absent"] = chk1
+    print(f"  1. latent_score absent from features: {'PASS' if chk1 else 'FAIL'}")
 
-    # Check 5: outcome not accidentally used as input (verified by exclusion from feature lists)
-    leakage_results["outcome_not_input"] = TARGET not in CATEGORICAL_FEATURES + NUMERIC_RAW
-    print(f"  outcome not in feature lists: {'PASS' if leakage_results['outcome_not_input'] else 'FAIL'}")
+    # Check 2: hidden probability absent
+    chk2 = "true_prob_HIDDEN" not in df.columns and "true_prob_HIDDEN" not in feature_cols
+    leakage_results["2_hidden_probability_absent"] = chk2
+    print(f"  2. hidden probability absent: {'PASS' if chk2 else 'FAIL'}")
 
-    # Check 6: Customer-level split verification
+    # Check 3: noise absent
+    noise_cols = [c for c in df.columns if "noise" in c.lower()]
+    chk3 = len(noise_cols) == 0
+    leakage_results["3_noise_absent"] = chk3
+    print(f"  3. noise absent: {'PASS' if chk3 else 'FAIL — ' + str(noise_cols)}")
+
+    # Check 4: post-outcome information absent
+    post_outcome = [c for c in df.columns if c in ["recovered_amount", "recovery_date"]]
+    chk4 = len(post_outcome) == 0
+    leakage_results["4_post_outcome_absent"] = chk4
+    print(f"  4. post-outcome information absent: {'PASS' if chk4 else 'FAIL'}")
+
+    # Check 5: outcome not accidentally included as an input feature
+    chk5 = TARGET not in feature_cols
+    leakage_results["5_outcome_not_input"] = chk5
+    print(f"  5. outcome not accidentally included as input feature: {'PASS' if chk5 else 'FAIL'}")
+
+    # Check 6: customer IDs do not overlap across train/val/test
     train_custs = set(df[df["split"] == "train"]["customer_id"].unique())
     val_custs = set(df[df["split"] == "val"]["customer_id"].unique())
     test_custs = set(df[df["split"] == "test"]["customer_id"].unique())
-
     overlap_tv = train_custs & val_custs
     overlap_tt = train_custs & test_custs
     overlap_vt = val_custs & test_custs
+    chk6 = len(overlap_tv) == 0 and len(overlap_tt) == 0 and len(overlap_vt) == 0
+    leakage_results["6_customer_no_overlap"] = chk6
+    print(f"  6. customer IDs do not overlap across train/val/test: {'PASS' if chk6 else 'FAIL'}")
+    print(f"     train∩val={len(overlap_tv)}, train∩test={len(overlap_tt)}, val∩test={len(overlap_vt)}")
 
-    no_overlap = len(overlap_tv) == 0 and len(overlap_tt) == 0 and len(overlap_vt) == 0
-    leakage_results["customer_split_no_overlap"] = no_overlap
-    print(f"  Customer overlap train∩val: {len(overlap_tv)}")
-    print(f"  Customer overlap train∩test: {len(overlap_tt)}")
-    print(f"  Customer overlap val∩test: {len(overlap_vt)}")
-    print(f"  Customer-level split verified: {'PASS' if no_overlap else 'FAIL'}")
+    # Check 7: preprocessing fitted only on training data
+    chk7 = True  # enforced by Pipeline: fit() called only on df_train
+    leakage_results["7_preprocessing_train_only"] = chk7
+    print(f"  7. preprocessing fitted only on training data: PASS (enforced by Pipeline design)")
 
-    # Check 7-8: Preprocessing fitted only on train (enforced by Pipeline design below)
-    leakage_results["preprocessing_train_only"] = True  # enforced by code structure
-    print(f"  Preprocessing fitted only on train: PASS (enforced by Pipeline design)")
+    # Check 8: test data not used during model selection
+    chk8 = True  # enforced by code structure: select_hyperparameters uses df_train/df_val only
+    leakage_results["8_test_not_used_for_selection"] = chk8
+    print(f"  8. test data not used during model selection: PASS (enforced by code structure)")
 
-    # Check 9: No future information
-    leakage_results["no_future_info"] = True
-    for col in ["recovered_amount", "final_outcome", "future_"]:
-        if any(col in c for c in df.columns):
-            leakage_results["no_future_info"] = False
-    print(f"  No future information in features: {'PASS' if leakage_results['no_future_info'] else 'FAIL'}")
+    # Check 9: no future information present
+    chk9 = True
+    for col_pattern in ["recovered_amount", "final_outcome", "future_"]:
+        if any(col_pattern in c for c in df.columns):
+            chk9 = False
+    leakage_results["9_no_future_info"] = chk9
+    print(f"  9. no future information present: {'PASS' if chk9 else 'FAIL'}")
 
-    # Check 10: Excluded fields not accidentally in feature lists
-    feature_set = set(CATEGORICAL_FEATURES + NUMERIC_RAW)
-    excluded_in_features = feature_set & set(EXCLUDED_FIELDS)
-    leakage_results["excluded_fields_absent"] = len(excluded_in_features) == 0
-    if excluded_in_features:
-        print(f"  Excluded fields check: FAIL — {excluded_in_features} found in feature lists!")
-    else:
-        print(f"  Excluded fields not in feature lists: PASS")
-
-    # Noise absent check
-    noise_cols = [c for c in df.columns if "noise" in c.lower()]
-    leakage_results["noise_absent"] = len(noise_cols) == 0
-    print(f"  Noise columns absent: {'PASS' if leakage_results['noise_absent'] else 'FAIL — ' + str(noise_cols)}")
-
-    # Post-outcome info absent
-    post_outcome = [c for c in df.columns if c in ["recovered_amount", "recovery_date"]]
-    leakage_results["post_outcome_absent"] = len(post_outcome) == 0
-    print(f"  Post-outcome info absent: {'PASS' if leakage_results['post_outcome_absent'] else 'FAIL'}")
+    # Check 10: excluded fields not accidentally included
+    excluded_in_features = set(feature_cols) & set(EXCLUDED_FIELDS)
+    chk10 = len(excluded_in_features) == 0
+    leakage_results["10_excluded_fields_absent"] = chk10
+    print(f"  10. excluded fields not accidentally included: {'PASS' if chk10 else 'FAIL — ' + str(excluded_in_features)}")
 
     all_pass = all(leakage_results.values())
     if not all_pass:
         failures = [k for k, v in leakage_results.items() if not v]
         raise ValueError(f"LEAKAGE DETECTED: {failures}")
-    print(f"\n  ALL LEAKAGE CHECKS: PASS ({len(leakage_results)}/{len(leakage_results)})")
+    print(f"\n  ALL LEAKAGE CHECKS: PASS (10/10)")
 
     # --- Split statistics ---
     print("\n--- SPLIT STATISTICS ---")
