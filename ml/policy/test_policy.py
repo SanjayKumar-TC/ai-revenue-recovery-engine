@@ -147,7 +147,7 @@ def test_2_high_value():
 
     # All automated recovery actions should be blocked
     auto_blocked = all(
-        a in blocked and blocked[a] == "amount_above_auto_limit"
+        a in blocked and "amount_above_auto_limit" in blocked[a]
         for a in AUTOMATED_RECOVERY_ACTIONS
         if a in ELIGIBILITY["temporary_bank_decline"]
     )
@@ -193,7 +193,7 @@ def test_3b_high_risk_block():
 
     # All automated recovery actions must be blocked
     auto_blocked = all(
-        a in blocked and blocked[a] == "high_risk_block"
+        a in blocked and "high_risk_block" in blocked[a]
         for a in AUTOMATED_RECOVERY_ACTIONS
         if a in ELIGIBILITY["temporary_bank_decline"]
     )
@@ -221,7 +221,7 @@ def test_4_retry_cap():
 
     passed = (
         "retry" in blocked and
-        blocked["retry"] == "retry_limit_reached" and
+        "retry_limit_reached" in blocked["retry"] and
         "retry" not in allowed and
         # Other actions still allowed
         "payment_link" in allowed and
@@ -241,7 +241,7 @@ def test_5_contact_fatigue():
     allowed = set(result["allowed_actions"])
 
     all_contact_blocked = all(
-        a in blocked and blocked[a] == "contact_fatigue_limit"
+        a in blocked and "contact_fatigue_limit" in blocked[a]
         for a in CONTACT_ACTIONS
         if a in ELIGIBILITY["temporary_bank_decline"]
     )
@@ -286,7 +286,7 @@ def test_7_discount_limit():
     blocked = result["blocked_actions"]
     passed = (
         "discount" in blocked and
-        blocked["discount"] == "discount_limit_exceeded" and
+        "discount_limit_exceeded" in blocked["discount"] and
         "discount" not in result["allowed_actions"]
     )
     details = (f"discount=25%, allowed={result['allowed_actions']}\n"
@@ -313,7 +313,7 @@ def test_8_risk_block_failure_type():
         "close" in allowed and
         # retry/payment_link/reminder/discount blocked as ineligible
         all(
-            blocked.get(a) == "ineligible_for_failure_type"
+            a in blocked and "ineligible_for_failure_type" in blocked[a]
             for a in ["retry", "payment_link", "reminder", "discount"]
         )
     )
@@ -439,7 +439,7 @@ def test_13_risk_boundary_exactness():
         result_85["escalation_required"] == True and
         "retry" not in result_85["allowed_actions"] and
         "retry" in result_85["blocked_actions"] and
-        result_85["blocked_actions"]["retry"] == "high_risk_block"
+        "high_risk_block" in result_85["blocked_actions"]["retry"]
     )
 
     # Just below 0.75 — should be normal

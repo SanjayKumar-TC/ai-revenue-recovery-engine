@@ -35,6 +35,14 @@ from ml.policy.policy_config import (
 )
 
 
+def _block_action(blocked_actions, action, reason):
+    """Add a block reason to an action. Multiple rules can each record their
+    own reason on the same action — all reasons are preserved as a list."""
+    if action not in blocked_actions:
+        blocked_actions[action] = []
+    blocked_actions[action].append(reason)
+
+
 def evaluate_policy(transaction):
     """
     Evaluate all policy rules for a transaction and return the policy result.
@@ -57,9 +65,10 @@ def evaluate_policy(transaction):
     Returns
     -------
     dict : Policy result with allowed_actions, blocked_actions, blocked_reasons, etc.
+          blocked_actions maps action -> [list of all reasons that block it].
     """
 
-    blocked_actions = {}  # action -> reason
+    blocked_actions = {}  # action -> [reason1, reason2, ...]
     escalation_required = False
     terminal = False
 
@@ -88,8 +97,8 @@ def evaluate_policy(transaction):
             "transaction_id": transaction_id,
             "policy_status": "terminal",
             "allowed_actions": [],
-            "blocked_actions": {a: "already_recovered" for a in sorted(ALL_ACTIONS)},
-            "blocked_reasons": {"all": "already_recovered"},
+            "blocked_actions": {a: ["already_recovered"] for a in sorted(ALL_ACTIONS)},
+            "blocked_reasons": {a: ["already_recovered"] for a in sorted(ALL_ACTIONS)},
             "escalation_required": False,
             "terminal": True,
             "policy_version": POLICY_VERSION,
@@ -106,8 +115,8 @@ def evaluate_policy(transaction):
             "transaction_id": transaction_id,
             "policy_status": "terminal",
             "allowed_actions": ["close"],
-            "blocked_actions": {a: "recovery_window_expired" for a in all_except_close},
-            "blocked_reasons": {"window": f"elapsed {hours_since_failure}h > {RECOVERY_WINDOW_HOURS}h limit"},
+            "blocked_actions": {a: ["recovery_window_expired"] for a in all_except_close},
+            "blocked_reasons": {a: ["recovery_window_expired"] for a in all_except_close},
             "escalation_required": False,
             "terminal": True,
             "policy_version": POLICY_VERSION,
@@ -123,15 +132,15 @@ def evaluate_policy(transaction):
     # Block any action not eligible for this failure_type
     for action in ALL_ACTIONS:
         if action not in eligible:
-            blocked_actions[action] = "ineligible_for_failure_type"
+            _block_action(blocked_actions, action, "ineligible_for_failure_type")
 
     # ================================================================
     # STEP 4: CHECK AMOUNT CEILING (Rule 2)
     # ================================================================
     if amount > MAX_AUTO_RECOVERY_AMOUNT:
         for action in AUTOMATED_RECOVERY_ACTIONS:
-            if action in eligible and action not in blocked_actions:
-                blocked_actions[action] = "amount_above_auto_limit"
+            if action in eligible:
+                _block_action(blocked_actions, action, "amount_above_auto_limit")
         escalation_required = True
 
     # ================================================================
@@ -144,20 +153,19 @@ def evaluate_policy(transaction):
     if risk_score >= HIGH_RISK_BLOCK_THRESHOLD:
         # Block all automated recovery actions
         for action in AUTOMATED_RECOVERY_ACTIONS:
-            if action in eligible and action not in blocked_actions:
-                blocked_actions[action] = "high_risk_block"
+            if action in eligible:
+                _block_action(blocked_actions, action, "high_risk_block")
         escalation_required = True
     elif risk_score >= HIGH_RISK_ESCALATION_THRESHOLD:
         # Mandatory escalation, but don't block automated actions
         escalation_required = True
-        # Add escalation reason to blocked_reasons (informational)
 
     # ================================================================
     # STEP 6: CHECK RETRY CAP (Rule 4)
     # ================================================================
     if attempt_number >= MAX_AUTO_RETRIES:
-        if "retry" in eligible and "retry" not in blocked_actions:
-            blocked_actions["retry"] = "retry_limit_reached"
+        if "retry" in eligible:
+            _block_action(blocked_actions, "retry", "retry_limit_reached")
 
     # ================================================================
     # STEP 7: CHECK CONTACT FATIGUE (Rule 5)
@@ -166,15 +174,15 @@ def evaluate_policy(transaction):
     # ================================================================
     if contact_fatigue >= MAX_CONTACT_FATIGUE:
         for action in CONTACT_ACTIONS:
-            if action in eligible and action not in blocked_actions:
-                blocked_actions[action] = "contact_fatigue_limit"
+            if action in eligible:
+                _block_action(blocked_actions, action, "contact_fatigue_limit")
 
     # ================================================================
     # STEP 8: CHECK DISCOUNT LIMIT (Rule 7)
     # ================================================================
     if discount_percent > MAX_DISCOUNT_PERCENT:
-        if "discount" in eligible and "discount" not in blocked_actions:
-            blocked_actions["discount"] = "discount_limit_exceeded"
+        if "discount" in eligible:
+            _block_action(blocked_actions, "discount", "discount_limit_exceeded")
 
     # ================================================================
     # STEP 9: PRODUCE FINAL RESULT
@@ -205,7 +213,7 @@ def evaluate_policy(transaction):
         "policy_status": policy_status,
         "allowed_actions": allowed,
         "blocked_actions": blocked_actions,
-        "blocked_reasons": blocked_actions,  # same structure, action->reason
+        "blocked_reasons": blocked_actions,  # same ref: action -> [reasons]
         "escalation_required": escalation_required,
         "terminal": terminal,
         "policy_version": POLICY_VERSION,
@@ -274,8 +282,8 @@ def _safe_failure_result(transaction, error_reason):
         "transaction_id": transaction.get("transaction_id", "unknown") if isinstance(transaction, dict) else "unknown",
         "policy_status": "terminal",
         "allowed_actions": ["escalate"],
-        "blocked_actions": {"all_automated": error_reason},
-        "blocked_reasons": {"validation_error": error_reason},
+        "blocked_actions": {"all_automated": [error_reason]},
+        "blocked_reasons": {"validation_error": [error_reason]},
         "escalation_required": True,
         "terminal": True,
         "policy_version": POLICY_VERSION,
