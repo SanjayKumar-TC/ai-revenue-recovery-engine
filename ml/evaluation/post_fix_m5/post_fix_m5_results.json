@@ -2,44 +2,40 @@
   "evaluation_name": "M5 Post-Fix Sensitivity Run (Close EV Correction)",
   "split": "test",
   "n_test": 1577,
-  "p_close_gt_wait_count": 96,
-  "p_wait_gt_close_count": 1481,
+  "p_close_gt_wait_count": 84,
+  "p_wait_gt_close_count": 1493,
   "p_equal_count": 0,
   "original_m5": {
     "policy_a_net": 1299952.45,
     "b0_waterfall_net": 1497969.37,
-    "gap_pa_minus_b0": -198016.92,
+    "gap_pa_minus_b0": -198016.92000000016,
     "policy_a_recovered_count": 361,
     "policy_a_recovery_rate": 22.89,
-    "b0_recovered_count": 312,
-    "b0_recovery_rate": 19.78,
     "action_distribution": {
       "discount": 628,
       "payment_link": 426,
-      "retry": 319,
+      "retry": 290,
       "wait": 204,
-      "close": 0
+      "reminder": 29
     }
   },
   "post_fix_m5": {
-    "policy_a_net": 1299952.45,
+    "policy_a_net": 1299952.4470000002,
     "b0_waterfall_net": 1497969.37,
-    "gap_pa_minus_b0": -198016.92,
+    "gap_pa_minus_b0": -198016.92299999995,
     "policy_a_recovered_count": 361,
-    "policy_a_recovery_rate": 22.89,
-    "b0_recovered_count": 312,
-    "b0_recovery_rate": 19.78,
+    "policy_a_recovery_rate": 22.89156626506024,
     "action_distribution": {
       "discount": 628,
       "payment_link": 426,
-      "retry": 319,
+      "retry": 290,
       "wait": 204,
-      "close": 0
+      "reminder": 29
     }
   },
   "deltas": {
-    "delta_policy_a_net": 0.0,
-    "delta_gap_pa_minus_b0": 0.0,
+    "delta_policy_a_net": -0.0029999997932463884,
+    "delta_gap_pa_minus_b0": -0.0029999997932463884,
     "total_decisions_changed": 0,
     "wait_to_close": 0,
     "close_to_wait": 0,
@@ -47,11 +43,21 @@
     "close_to_other": 0,
     "other_to_other": 0
   },
-  "effect_classification": "ZERO (0 decision flips, Rs. 0.00 net value change)",
   "integrity_verification": {
-    "original_m5_artifacts_preserved": true,
-    "m5_2_artifacts_preserved": true,
-    "m1_m6_source_preserved": true,
-    "retraining_occurred": false
+    "passed": true,
+    "pre_hashes": {
+      "C:\\Users\\ADMIN\\Desktop\\recovery\\ml\\experiment\\results\\comparison_table.csv": "4165b3951e9cf444c3322890496b9283def74932c0334debeee89d9cda2d54a5",
+      "C:\\Users\\ADMIN\\Desktop\\recovery\\ml\\experiment\\results\\per_transaction_decisions.csv": "5396708cba57ea8ea3abb8ff16beac39e7fce172dfbb24184e3c35c2d6bcdc70",
+      "C:\\Users\\ADMIN\\Desktop\\recovery\\ml\\evaluation\\m5_report.md": "6e7513ea9fd94e67be108b6be34079aa037c34d9e45047fa3915852698a33fad",
+      "C:\\Users\\ADMIN\\Desktop\\recovery\\action_expanded_with_hidden_truth.csv": "c77ac44c137d7d95465d375aae882a9f9a93c1e602f842aa0f3e8319ce9e1089",
+      "C:\\Users\\ADMIN\\Desktop\\recovery\\ml\\models\\recovery_model.joblib": "df96e14aa3643dd6df78ddecb47e54b57890a28a2464be931d080ca158113d01"
+    },
+    "post_hashes": {
+      "C:\\Users\\ADMIN\\Desktop\\recovery\\ml\\experiment\\results\\comparison_table.csv": "4165b3951e9cf444c3322890496b9283def74932c0334debeee89d9cda2d54a5",
+      "C:\\Users\\ADMIN\\Desktop\\recovery\\ml\\experiment\\results\\per_transaction_decisions.csv": "5396708cba57ea8ea3abb8ff16beac39e7fce172dfbb24184e3c35c2d6bcdc70",
+      "C:\\Users\\ADMIN\\Desktop\\recovery\\ml\\evaluation\\m5_report.md": "6e7513ea9fd94e67be108b6be34079aa037c34d9e45047fa3915852698a33fad",
+      "C:\\Users\\ADMIN\\Desktop\\recovery\\action_expanded_with_hidden_truth.csv": "c77ac44c137d7d95465d375aae882a9f9a93c1e602f842aa0f3e8319ce9e1089",
+      "C:\\Users\\ADMIN\\Desktop\\recovery\\ml\\models\\recovery_model.joblib": "df96e14aa3643dd6df78ddecb47e54b57890a28a2464be931d080ca158113d01"
+    }
   }
 }

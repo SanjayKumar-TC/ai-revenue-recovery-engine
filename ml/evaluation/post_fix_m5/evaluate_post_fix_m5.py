@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 
 # Add repo root to sys.path
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
 
@@ -30,7 +30,6 @@ from ml.decision.decision_config import (
     EV_TIE_TOLERANCE,
 )
 from ml.decision.decision_engine import load_model, make_decision, predict_probability
-from ml.decision.ev_engine import calculate_ev, select_best_action
 from ml.experiment.baseline_policy import (
     BASELINE_MAX_RETRIES,
     select_b0_waterfall,
@@ -155,7 +154,8 @@ def run_post_fix_evaluation():
     # 3. Load test data and M2 model
     test_txns, outcome_lookup = load_experiment_data()
     n_txns = len(test_txns)
-    model, model_err = load_model()
+    model_path = os.path.join(REPO_ROOT, "ml", "models", "recovery_model.joblib")
+    model, model_err = load_model(model_path=model_path)
     if model is None:
         raise RuntimeError(f"Failed to load M2 model: {model_err}")
 
@@ -397,7 +397,7 @@ def run_post_fix_evaluation():
         df_p = post_dfs[p].copy()
         all_post_per_txn.append(df_p)
     post_policy_rows_path = os.path.join(OUTPUT_DIR, "post_fix_m5_policy_rows.csv")
-    pd.concat(all_post_per_txn, ignore_index=True).to_csv(post_policy_rows_path, index=False)
+    pd.concat(all_post_per_txn, ignore_index=True).to_csv(post_policy_rows_path, index=False, encoding="utf-8")
 
     # File 2: post_fix_m5_comparison.csv (Comparison table for all policies)
     comp_rows = []
@@ -415,7 +415,7 @@ def run_post_fix_evaluation():
             "most_frequent_action_share": round(m["most_frequent_action_share"], 1),
         })
     post_comparison_csv_path = os.path.join(OUTPUT_DIR, "post_fix_m5_comparison.csv")
-    pd.DataFrame(comp_rows).to_csv(post_comparison_csv_path, index=False)
+    pd.DataFrame(comp_rows).to_csv(post_comparison_csv_path, index=False, encoding="utf-8")
 
     # File 3: post_fix_m5_results.json (Detailed summary object)
     results_json_path = os.path.join(OUTPUT_DIR, "post_fix_m5_results.json")
@@ -458,7 +458,7 @@ def run_post_fix_evaluation():
             "post_hashes": post_hashes,
         },
     }
-    with open(results_json_path, "w") as f:
+    with open(results_json_path, "w", encoding="utf-8") as f:
         json.dump(results_payload, f, indent=2)
 
     # File 4: post_fix_m5_report.md
@@ -553,7 +553,7 @@ This run performs a direct, controlled, test-set ($N=1,577$) measurement compari
 - **Retraining:** NONE (Model weights unchanged).
 - **Scope:** Outputs written exclusively to `ml/evaluation/post_fix_m5/`.
 """
-    with open(report_md_path, "w") as f:
+    with open(report_md_path, "w", encoding="utf-8") as f:
         f.write(report_content)
 
     return results_payload

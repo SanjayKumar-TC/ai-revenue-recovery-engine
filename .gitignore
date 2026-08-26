@@ -2,3 +2,5 @@ action_expanded_with_hidden_truth.csv
 __pycache__/
 .venv/
 .env
+ml/audit/audit_trail.db
+*.db
