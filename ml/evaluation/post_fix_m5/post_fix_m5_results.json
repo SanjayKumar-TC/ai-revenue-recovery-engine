@@ -1,0 +1,57 @@
+{
+  "evaluation_name": "M5 Post-Fix Sensitivity Run (Close EV Correction)",
+  "split": "test",
+  "n_test": 1577,
+  "p_close_gt_wait_count": 96,
+  "p_wait_gt_close_count": 1481,
+  "p_equal_count": 0,
+  "original_m5": {
+    "policy_a_net": 1299952.45,
+    "b0_waterfall_net": 1497969.37,
+    "gap_pa_minus_b0": -198016.92,
+    "policy_a_recovered_count": 361,
+    "policy_a_recovery_rate": 22.89,
+    "b0_recovered_count": 312,
+    "b0_recovery_rate": 19.78,
+    "action_distribution": {
+      "discount": 628,
+      "payment_link": 426,
+      "retry": 319,
+      "wait": 204,
+      "close": 0
+    }
+  },
+  "post_fix_m5": {
+    "policy_a_net": 1299952.45,
+    "b0_waterfall_net": 1497969.37,
+    "gap_pa_minus_b0": -198016.92,
+    "policy_a_recovered_count": 361,
+    "policy_a_recovery_rate": 22.89,
+    "b0_recovered_count": 312,
+    "b0_recovery_rate": 19.78,
+    "action_distribution": {
+      "discount": 628,
+      "payment_link": 426,
+      "retry": 319,
+      "wait": 204,
+      "close": 0
+    }
+  },
+  "deltas": {
+    "delta_policy_a_net": 0.0,
+    "delta_gap_pa_minus_b0": 0.0,
+    "total_decisions_changed": 0,
+    "wait_to_close": 0,
+    "close_to_wait": 0,
+    "other_to_close": 0,
+    "close_to_other": 0,
+    "other_to_other": 0
+  },
+  "effect_classification": "ZERO (0 decision flips, Rs. 0.00 net value change)",
+  "integrity_verification": {
+    "original_m5_artifacts_preserved": true,
+    "m5_2_artifacts_preserved": true,
+    "m1_m6_source_preserved": true,
+    "retraining_occurred": false
+  }
+}
