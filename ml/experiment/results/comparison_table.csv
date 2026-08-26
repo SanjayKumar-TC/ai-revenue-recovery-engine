@@ -1,0 +1,9 @@
+policy,transactions_recovered,recovery_rate,gross_recovered_amount,total_intervention_cost,net_recovered_amount,most_frequent_action,most_frequent_action_share
+b6_oracle,818,51.87,3360246.12,1235.0,3359011.12,wait,62.4
+b0_waterfall,312,19.78,1501443.37,3474.0,1497969.37,reminder,46.2
+b1_random,266,16.87,1363512.35,2427.0,1361085.35,wait,23.7
+policy_a,361,22.89,1302749.45,2797.0,1299952.45,discount,39.8
+b5_always_discount,348,22.07,985800.21,534.0,985266.21,discount,62.5
+b2_always_retry,275,17.44,805325.22,1290.0,804035.22,wait,54.5
+b3_always_payment_link,303,19.21,800429.78,6865.0,793564.78,payment_link,87.1
+b4_always_reminder,250,15.85,617356.6,4119.0,613237.6,reminder,87.1

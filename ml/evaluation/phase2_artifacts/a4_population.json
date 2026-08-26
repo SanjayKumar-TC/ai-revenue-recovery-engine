@@ -1,0 +1,9 @@
+{
+  "split": "test",
+  "data_operation": "OP-F",
+  "derived_count": 204,
+  "derived_net_diff": -247409.56,
+  "class_r_count": 204,
+  "class_r_net_diff": -247410.0,
+  "agree": true
+}

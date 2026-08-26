@@ -1,0 +1,7 @@
+{
+  "split": "val",
+  "data_operation": "OP-V",
+  "live_class_h_validation_net": 1235565.7349999999,
+  "class_r_reference_value": 1235565.73,
+  "agree": true
+}

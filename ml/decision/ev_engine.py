@@ -6,7 +6,6 @@ Calculates Expected Net Value for each permitted action.
 EV(action) = P(recovery | context, action) × recoverable_amount − intervention_cost
 
 Special cases:
-  - close: EV = 0 (permanent non-intervention)
   - discount: recoverable_amount = amount − discount_amount
   - escalate: not scored via ordinary EV (human routing)
 """
@@ -32,18 +31,6 @@ def calculate_ev(action, probability, amount, discount_percent=None):
         gross_expected_recovery, intervention_cost, discount_amount,
         expected_net_value
     """
-    # close: EV = 0, no recovery attempt
-    if action == "close":
-        return {
-            "action": "close",
-            "predicted_probability": probability,
-            "recoverable_amount": amount,
-            "gross_expected_recovery": 0.0,
-            "intervention_cost": 0.0,
-            "discount_amount": 0.0,
-            "expected_net_value": 0.0,
-        }
-
     intervention_cost = ACTION_COSTS.get(action, 0.0)
 
     # discount: recoverable_amount = amount − discount_amount

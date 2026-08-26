@@ -1,0 +1,6 @@
+split,data_op,lambda,net_recovered_amount,prior_class_r_net,delta_from_prior,recovered_count,recovery_rate,action_distribution
+val,OP-V,0.0,1078896.67,1058557.21,20339.459999999963,288,20.069686411149824,"{'payment_link': 691, 'retry': 567, 'wait': 174, 'discount': 3}"
+val,OP-V,0.25,1090067.849,1139204.48,-49136.63100000005,290,20.209059233449477,"{'payment_link': 573, 'retry': 567, 'wait': 174, 'discount': 121}"
+val,OP-V,0.5,1103310.75,1182206.78,-78896.03000000003,294,20.48780487804878,"{'retry': 567, 'payment_link': 429, 'discount': 265, 'wait': 174}"
+val,OP-V,0.75,1196671.246,1183920.74,12750.506000000052,319,22.229965156794425,"{'discount': 480, 'retry': 385, 'payment_link': 380, 'wait': 174, 'reminder': 16}"
+val,OP-V,1.0,1235565.7349999999,1235565.73,0.004999999888241291,326,22.717770034843205,"{'discount': 555, 'payment_link': 411, 'retry': 260, 'wait': 174, 'reminder': 35}"

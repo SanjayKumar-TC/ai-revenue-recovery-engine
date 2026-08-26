@@ -1,0 +1,9 @@
+item,class_r_prior,computed_value,status
+P(close) > P(wait) on validation,87 (draft 1) / 0 (draft 2),87,AGREE (with draft 1)
+Policy A validation recovered count,326 (draft 1) / 329 (draft 2),326,AGREE (with draft 1)
+B0 validation net,"989,434.95","989,434.95",AGREE
+P5 wait recoveries count on 204,31 (draft 1 data error),6,DISAGREE (prior was data error)
+P5 close recoveries count on 204,8,8,AGREE
+Top 3 close-only sum,"329,676.00 / 323,945.00","329,675.72",AGREE (with draft 1 reference)
+P2 Concordance rate,0.52 (draft 1 text) / 0.6223 (draft 2),0.6223,AGREE (with draft 2)
+M4 validation net baseline,"1,235,565.73","1,235,565.73",AGREE

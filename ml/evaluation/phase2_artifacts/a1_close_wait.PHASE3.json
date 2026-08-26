@@ -1,0 +1,13 @@
+{
+  "split": "val",
+  "data_operation": "OP-V",
+  "n_validation": 1435,
+  "p_close_gt_wait_count": 87,
+  "p_wait_gt_close_count": 1348,
+  "p_equal_count": 0,
+  "flips_count": 0,
+  "standard_net": 1235565.7349999999,
+  "corrected_net": 1235565.7349999999,
+  "delta_net": 0.0,
+  "h4_status": "CLOSED AS FALSE (0 flips, Rs. 0.00 value impact on validation)"
+}

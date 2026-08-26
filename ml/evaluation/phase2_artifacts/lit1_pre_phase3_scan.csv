@@ -1,0 +1,590 @@
+classification,token,line_num,line
+unsourced,0.6223,12,"- Pairwise cross-action concordance on validation (OP-V) is **0.6223** (95% CI [0.6071, 0.6376], N = 3,879 discordant-outcome pairs), which is **15.68 standard errors above the 0.50 null (p < 1e-15)**."
+unsourced,0.6071,12,"- Pairwise cross-action concordance on validation (OP-V) is **0.6223** (95% CI [0.6071, 0.6376], N = 3,879 discordant-outcome pairs), which is **15.68 standard errors above the 0.50 null (p < 1e-15)**."
+unsourced,0.6376,12,"- Pairwise cross-action concordance on validation (OP-V) is **0.6223** (95% CI [0.6071, 0.6376], N = 3,879 discordant-outcome pairs), which is **15.68 standard errors above the 0.50 null (p < 1e-15)**."
+unsourced,"3,879",12,"- Pairwise cross-action concordance on validation (OP-V) is **0.6223** (95% CI [0.6071, 0.6376], N = 3,879 discordant-outcome pairs), which is **15.68 standard errors above the 0.50 null (p < 1e-15)**."
+unsourced,15.68,12,"- Pairwise cross-action concordance on validation (OP-V) is **0.6223** (95% CI [0.6071, 0.6376], N = 3,879 discordant-outcome pairs), which is **15.68 standard errors above the 0.50 null (p < 1e-15)**."
+unsourced,15,12,"- Pairwise cross-action concordance on validation (OP-V) is **0.6223** (95% CI [0.6071, 0.6376], N = 3,879 discordant-outcome pairs), which is **15.68 standard errors above the 0.50 null (p < 1e-15)**."
+unsourced,0.6468,13,"- Value-weighted concordance is **0.6468**, proving that ranking quality does not degrade on high-value transactions."
+unsourced,23.1,14,"- Decision agreement with the Oracle (B6) is **23.1% for Policy A vs 12.1% for B0** overall (1.91x), expanding to **44.4% for Policy A vs 8.3% for B0** on the top amount decile (5.35x)."
+unsourced,12.1,14,"- Decision agreement with the Oracle (B6) is **23.1% for Policy A vs 12.1% for B0** overall (1.91x), expanding to **44.4% for Policy A vs 8.3% for B0** on the top amount decile (5.35x)."
+unsourced,44.4,14,"- Decision agreement with the Oracle (B6) is **23.1% for Policy A vs 12.1% for B0** overall (1.91x), expanding to **44.4% for Policy A vs 8.3% for B0** on the top amount decile (5.35x)."
+unsourced,8.3,14,"- Decision agreement with the Oracle (B6) is **23.1% for Policy A vs 12.1% for B0** overall (1.91x), expanding to **44.4% for Policy A vs 8.3% for B0** on the top amount decile (5.35x)."
+unsourced,"156,669.06",16,"- Shrinkage sweep (P3, OP-V) with allowed-only P_bar targets shows net value is **monotone increasing with lambda** (+₹156,669.06 / +14.5% from lambda=0.0 to lambda=1.0)."
+unsourced,"247,410",18,"4. **The -₹247,410 `wait -> close` substitution in M5 reflects heavy-tailed sampling variance on a structurally hard subset (OP-F).**"
+unsourced,133.2,20,"- Just **3 close-only recoveries** (Txn 1998, Txn 7703, Txn 196) account for **₹329,675.72 (133.2%)** of the -₹247,410 gap."
+unsourced,"247,410",20,"- Just **3 close-only recoveries** (Txn 1998, Txn 7703, Txn 196) account for **₹329,675.72 (133.2%)** of the -₹247,410 gap."
+unsourced,"444,147.70",24,"- The cross-split gap swing of **₹444,147.70** is well within the test bootstrap 95% CI width (₹1,108,876.31)."
+unsourced,0.0001,65,"- **`close` vs `wait`:** `wait > close` in **1,348 txns (93.9%)**, `close > wait` in **87 txns (6.1%)** (Ties: 0). Min diff = 0.0001, Median diff = 0.0347, Max diff = 0.0841."
+unsourced,0.0347,65,"- **`close` vs `wait`:** `wait > close` in **1,348 txns (93.9%)**, `close > wait` in **87 txns (6.1%)** (Ties: 0). Min diff = 0.0001, Median diff = 0.0347, Max diff = 0.0841."
+unsourced,0.0841,65,"- **`close` vs `wait`:** `wait > close` in **1,348 txns (93.9%)**, `close > wait` in **87 txns (6.1%)** (Ties: 0). Min diff = 0.0001, Median diff = 0.0347, Max diff = 0.0841."
+unsourced,2.17,109,"| **Validation** | OP-V | **Policy A** | 1,435 | 326 | 22.72% [±2.17%] | ₹1,238,245.73 | ₹2,680.00 | ₹38,468.39 | **₹1,235,565.73** | **₹861.02** |"
+unsourced,"1,238,245.73",109,"| **Validation** | OP-V | **Policy A** | 1,435 | 326 | 22.72% [±2.17%] | ₹1,238,245.73 | ₹2,680.00 | ₹38,468.39 | **₹1,235,565.73** | **₹861.02** |"
+unsourced,2.04,110,"| **Validation** | OP-V | **B0 Waterfall** | 1,435 | 272 | 18.95% [±2.04%] | ₹992,650.95 | ₹3,216.00 | ₹0.00 | **₹989,434.95** | **₹689.50** |"
+unsourced,2.07,111,"| **Test** | OP-F | **Policy A** | 1,577 | 361 | 22.89% [±2.07%] | ₹1,302,749.45 | ₹2,797.00 | ₹40,673.29 | **₹1,299,952.45** | **₹824.32** |"
+unsourced,1.97,112,"| **Test** | OP-F | **B0 Waterfall** | 1,577 | 312 | 19.78% [±1.97%] | ₹1,501,443.37 | ₹3,474.00 | ₹0.00 | **₹1,497,969.37** | **₹949.89** |"
+unsourced,1.85,113,"| **Test** | OP-F | **B1 Random** | 1,577 | 266 | 16.87% [±1.85%] | ₹1,363,512.35 | ₹2,427.00 | ₹11,300.31 | **₹1,361,085.35** | **₹863.09** |"
+unsourced,2.46,114,"| **Test** | OP-F | **B6 Oracle** | 1,577 | 818 | 51.87% [±2.46%] | ₹3,360,246.12 | ₹1,235.00 | ₹37,399.62 | **₹3,359,011.12** | **₹2,129.37** |"
+unsourced,"2,129.37",114,"| **Test** | OP-F | **B6 Oracle** | 1,577 | 818 | 51.87% [±2.46%] | ₹3,360,246.12 | ₹1,235.00 | ₹37,399.62 | **₹3,359,011.12** | **₹2,129.37** |"
+unsourced,691,133,"| **0.00** | Marginal Means Only | **₹1,078,896.67** | ₹1,058,557.21 | +₹20,339.46 | 288 | 20.07% | `{'payment_link': 691, 'retry': 567, 'wait': 174, 'discount': 3}` |"
+unsourced,75,134,"| **0.25** | Shrunk 75% | **₹1,090,067.85** | ₹1,139,204.48 | -₹49,136.63 | 290 | 20.21% | `{'payment_link': 573, 'retry': 567, 'wait': 174, 'discount': 121}` |"
+unsourced,573,134,"| **0.25** | Shrunk 75% | **₹1,090,067.85** | ₹1,139,204.48 | -₹49,136.63 | 290 | 20.21% | `{'payment_link': 573, 'retry': 567, 'wait': 174, 'discount': 121}` |"
+unsourced,121,134,"| **0.25** | Shrunk 75% | **₹1,090,067.85** | ₹1,139,204.48 | -₹49,136.63 | 290 | 20.21% | `{'payment_link': 573, 'retry': 567, 'wait': 174, 'discount': 121}` |"
+unsourced,50,135,"| **0.50** | Shrunk 50% | **₹1,103,310.75** | ₹1,182,206.78 | -₹78,896.03 | 294 | 20.49% | `{'retry': 567, 'payment_link': 429, 'discount': 265, 'wait': 174}` |"
+unsourced,429,135,"| **0.50** | Shrunk 50% | **₹1,103,310.75** | ₹1,182,206.78 | -₹78,896.03 | 294 | 20.49% | `{'retry': 567, 'payment_link': 429, 'discount': 265, 'wait': 174}` |"
+unsourced,265,135,"| **0.50** | Shrunk 50% | **₹1,103,310.75** | ₹1,182,206.78 | -₹78,896.03 | 294 | 20.49% | `{'retry': 567, 'payment_link': 429, 'discount': 265, 'wait': 174}` |"
+unsourced,25,136,"| **0.75** | Shrunk 25% | **₹1,196,671.25** | ₹1,183,920.74 | +₹12,750.51 | 319 | 22.23% | `{'discount': 480, 'retry': 385, 'payment_link': 380, 'wait': 174, 'reminder': 16}` |"
+unsourced,480,136,"| **0.75** | Shrunk 25% | **₹1,196,671.25** | ₹1,183,920.74 | +₹12,750.51 | 319 | 22.23% | `{'discount': 480, 'retry': 385, 'payment_link': 380, 'wait': 174, 'reminder': 16}` |"
+unsourced,385,136,"| **0.75** | Shrunk 25% | **₹1,196,671.25** | ₹1,183,920.74 | +₹12,750.51 | 319 | 22.23% | `{'discount': 480, 'retry': 385, 'payment_link': 380, 'wait': 174, 'reminder': 16}` |"
+unsourced,380,136,"| **0.75** | Shrunk 25% | **₹1,196,671.25** | ₹1,183,920.74 | +₹12,750.51 | 319 | 22.23% | `{'discount': 480, 'retry': 385, 'payment_link': 380, 'wait': 174, 'reminder': 16}` |"
+unsourced,16,136,"| **0.75** | Shrunk 25% | **₹1,196,671.25** | ₹1,183,920.74 | +₹12,750.51 | 319 | 22.23% | `{'discount': 480, 'retry': 385, 'payment_link': 380, 'wait': 174, 'reminder': 16}` |"
+unsourced,100.0,139,*Harness Assertion (P3-1):* $\lambda = 1.0$ matches Live Class H M4 validation baseline within ₹0.00 and achieves **100.0% decision agreement**.
+unsourced,3.92,155,"| **Total B0 `close` Recoveries** | **8 (3.92%)** | **₹596,379.05** | Sum of CLOSE_ONLY + BOTH |"
+unsourced,2.94,156,"| **Total Policy A `wait` Recoveries** | **6 (2.94%)** | **₹348,969.49** | Sum of WAIT_ONLY + BOTH |"
+unsourced,133.2,163,"- **Sum of Top 3 Close-Only Outliers:** **₹329,675.72** (**133.2%** of the -₹247,410 gap; **166.5%** of the -₹198,017 test deficit)."
+unsourced,"247,410",163,"- **Sum of Top 3 Close-Only Outliers:** **₹329,675.72** (**133.2%** of the -₹247,410 gap; **166.5%** of the -₹198,017 test deficit)."
+unsourced,"198,017",163,"- **Sum of Top 3 Close-Only Outliers:** **₹329,675.72** (**133.2%** of the -₹247,410 gap; **166.5%** of the -₹198,017 test deficit)."
+unsourced,"247,410.00",171,"| **Passive tail outcome sampling variance (`wait` vs `close` on 204 txns)** | -₹247,410.00 | 124.9% | Section A4 / `a4_partition_summary.json` | Test | OP-F |"
+unsourced,124.9,171,"| **Passive tail outcome sampling variance (`wait` vs `close` on 204 txns)** | -₹247,410.00 | 124.9% | Section A4 / `a4_partition_summary.json` | Test | OP-F |"
+unsourced,"150,157.08",172,"| **Active intervention value gains (`discount` / `payment_link`)** | +₹150,157.08 | -75.8% | Frozen M5 D4 substitution matrix | Test | OP-F |"
+unsourced,75.8,172,"| **Active intervention value gains (`discount` / `payment_link`)** | +₹150,157.08 | -75.8% | Frozen M5 D4 substitution matrix | Test | OP-F |"
+unsourced,"100,764.00",173,"| **UNEXPLAINED RESIDUAL (Cross-split sampling variance)** | **-₹100,764.00** | **50.9%** | Arithmetic difference: `Total - Sum(Components)` | Test | OP-F |"
+unsourced,50.9,173,"| **UNEXPLAINED RESIDUAL (Cross-split sampling variance)** | **-₹100,764.00** | **50.9%** | Arithmetic difference: `Total - Sum(Components)` | Test | OP-F |"
+unsourced,100.0,174,"| **Total Test Split Deficit** | **-₹198,016.92** | **100.0%** | Frozen M5 Result Block | Test | OP-F |"
+unsourced,0.3404,185,"| `retry` | 567 | 0.3329 | 0.3404 | +0.0075 | 0.0188 | [-0.0294, +0.0444] | NO |"
+unsourced,0.0075,185,"| `retry` | 567 | 0.3329 | 0.3404 | +0.0075 | 0.0188 | [-0.0294, +0.0444] | NO |"
+unsourced,0.0188,185,"| `retry` | 567 | 0.3329 | 0.3404 | +0.0075 | 0.0188 | [-0.0294, +0.0444] | NO |"
+unsourced,0.0294,185,"| `retry` | 567 | 0.3329 | 0.3404 | +0.0075 | 0.0188 | [-0.0294, +0.0444] | NO |"
+unsourced,0.0444,185,"| `retry` | 567 | 0.3329 | 0.3404 | +0.0075 | 0.0188 | [-0.0294, +0.0444] | NO |"
+unsourced,0.2133,186,"| `payment_link` | 1,261 | 0.2173 | 0.2133 | -0.0040 | 0.0109 | [-0.0255, +0.0174] | NO |"
+unsourced,0.0040,186,"| `payment_link` | 1,261 | 0.2173 | 0.2133 | -0.0040 | 0.0109 | [-0.0255, +0.0174] | NO |"
+unsourced,0.0109,186,"| `payment_link` | 1,261 | 0.2173 | 0.2133 | -0.0040 | 0.0109 | [-0.0255, +0.0174] | NO |"
+unsourced,0.0255,186,"| `payment_link` | 1,261 | 0.2173 | 0.2133 | -0.0040 | 0.0109 | [-0.0255, +0.0174] | NO |"
+unsourced,0.0174,186,"| `payment_link` | 1,261 | 0.2173 | 0.2133 | -0.0040 | 0.0109 | [-0.0255, +0.0174] | NO |"
+unsourced,0.1594,187,"| `reminder` | 1,261 | 0.1794 | 0.1594 | -0.0200 | 0.0099 | [-0.0393, -0.0007] | **YES** |"
+unsourced,0.0200,187,"| `reminder` | 1,261 | 0.1794 | 0.1594 | -0.0200 | 0.0099 | [-0.0393, -0.0007] | **YES** |"
+unsourced,0.0099,187,"| `reminder` | 1,261 | 0.1794 | 0.1594 | -0.0200 | 0.0099 | [-0.0393, -0.0007] | **YES** |"
+unsourced,0.0393,187,"| `reminder` | 1,261 | 0.1794 | 0.1594 | -0.0200 | 0.0099 | [-0.0393, -0.0007] | **YES** |"
+unsourced,0.0007,187,"| `reminder` | 1,261 | 0.1794 | 0.1594 | -0.0200 | 0.0099 | [-0.0393, -0.0007] | **YES** |"
+unsourced,0.2211,188,"| `discount` | 918 | 0.2197 | 0.2211 | +0.0014 | 0.0130 | [-0.0240, +0.0268] | NO |"
+unsourced,0.0014,188,"| `discount` | 918 | 0.2197 | 0.2211 | +0.0014 | 0.0130 | [-0.0240, +0.0268] | NO |"
+unsourced,0.0130,188,"| `discount` | 918 | 0.2197 | 0.2211 | +0.0014 | 0.0130 | [-0.0240, +0.0268] | NO |"
+unsourced,0.0240,188,"| `discount` | 918 | 0.2197 | 0.2211 | +0.0014 | 0.0130 | [-0.0240, +0.0268] | NO |"
+unsourced,0.0268,188,"| `discount` | 918 | 0.2197 | 0.2211 | +0.0014 | 0.0130 | [-0.0240, +0.0268] | NO |"
+unsourced,0.1352,189,"| `wait` | 1,435 | 0.1381 | 0.1352 | -0.0029 | 0.0085 | [-0.0195, +0.0137] | NO |"
+unsourced,0.0029,189,"| `wait` | 1,435 | 0.1381 | 0.1352 | -0.0029 | 0.0085 | [-0.0195, +0.0137] | NO |"
+unsourced,0.0085,189,"| `wait` | 1,435 | 0.1381 | 0.1352 | -0.0029 | 0.0085 | [-0.0195, +0.0137] | NO |"
+unsourced,0.0195,189,"| `wait` | 1,435 | 0.1381 | 0.1352 | -0.0029 | 0.0085 | [-0.0195, +0.0137] | NO |"
+unsourced,0.0137,189,"| `wait` | 1,435 | 0.1381 | 0.1352 | -0.0029 | 0.0085 | [-0.0195, +0.0137] | NO |"
+unsourced,0.1101,190,"| `close` | 1,435 | 0.1029 | 0.1101 | +0.0073 | 0.0078 | [-0.0080, +0.0225] | NO |"
+unsourced,0.0073,190,"| `close` | 1,435 | 0.1029 | 0.1101 | +0.0073 | 0.0078 | [-0.0080, +0.0225] | NO |"
+unsourced,0.0078,190,"| `close` | 1,435 | 0.1029 | 0.1101 | +0.0073 | 0.0078 | [-0.0080, +0.0225] | NO |"
+unsourced,0.0080,190,"| `close` | 1,435 | 0.1029 | 0.1101 | +0.0073 | 0.0078 | [-0.0080, +0.0225] | NO |"
+unsourced,0.0225,190,"| `close` | 1,435 | 0.1029 | 0.1101 | +0.0073 | 0.0078 | [-0.0080, +0.0225] | NO |"
+unsourced,97,195,"| 0 | ₹97 – ₹677 | 132 | 0.2391 | 0.1970 | -0.0422 | 0.0320 | [-0.1049, +0.0206] | NO |"
+unsourced,677,195,"| 0 | ₹97 – ₹677 | 132 | 0.2391 | 0.1970 | -0.0422 | 0.0320 | [-0.1049, +0.0206] | NO |"
+unsourced,132,195,"| 0 | ₹97 – ₹677 | 132 | 0.2391 | 0.1970 | -0.0422 | 0.0320 | [-0.1049, +0.0206] | NO |"
+unsourced,0.2391,195,"| 0 | ₹97 – ₹677 | 132 | 0.2391 | 0.1970 | -0.0422 | 0.0320 | [-0.1049, +0.0206] | NO |"
+unsourced,0.1970,195,"| 0 | ₹97 – ₹677 | 132 | 0.2391 | 0.1970 | -0.0422 | 0.0320 | [-0.1049, +0.0206] | NO |"
+unsourced,0.0422,195,"| 0 | ₹97 – ₹677 | 132 | 0.2391 | 0.1970 | -0.0422 | 0.0320 | [-0.1049, +0.0206] | NO |"
+unsourced,0.0320,195,"| 0 | ₹97 – ₹677 | 132 | 0.2391 | 0.1970 | -0.0422 | 0.0320 | [-0.1049, +0.0206] | NO |"
+unsourced,0.1049,195,"| 0 | ₹97 – ₹677 | 132 | 0.2391 | 0.1970 | -0.0422 | 0.0320 | [-0.1049, +0.0206] | NO |"
+unsourced,0.0206,195,"| 0 | ₹97 – ₹677 | 132 | 0.2391 | 0.1970 | -0.0422 | 0.0320 | [-0.1049, +0.0206] | NO |"
+unsourced,679,196,"| 1 | ₹679 – ₹975 | 135 | 0.2006 | 0.2296 | +0.0290 | 0.0341 | [-0.0377, +0.0957] | NO |"
+unsourced,975,196,"| 1 | ₹679 – ₹975 | 135 | 0.2006 | 0.2296 | +0.0290 | 0.0341 | [-0.0377, +0.0957] | NO |"
+unsourced,135,196,"| 1 | ₹679 – ₹975 | 135 | 0.2006 | 0.2296 | +0.0290 | 0.0341 | [-0.0377, +0.0957] | NO |"
+unsourced,0.2006,196,"| 1 | ₹679 – ₹975 | 135 | 0.2006 | 0.2296 | +0.0290 | 0.0341 | [-0.0377, +0.0957] | NO |"
+unsourced,0.2296,196,"| 1 | ₹679 – ₹975 | 135 | 0.2006 | 0.2296 | +0.0290 | 0.0341 | [-0.0377, +0.0957] | NO |"
+unsourced,0.0290,196,"| 1 | ₹679 – ₹975 | 135 | 0.2006 | 0.2296 | +0.0290 | 0.0341 | [-0.0377, +0.0957] | NO |"
+unsourced,0.0341,196,"| 1 | ₹679 – ₹975 | 135 | 0.2006 | 0.2296 | +0.0290 | 0.0341 | [-0.0377, +0.0957] | NO |"
+unsourced,0.0377,196,"| 1 | ₹679 – ₹975 | 135 | 0.2006 | 0.2296 | +0.0290 | 0.0341 | [-0.0377, +0.0957] | NO |"
+unsourced,0.0957,196,"| 1 | ₹679 – ₹975 | 135 | 0.2006 | 0.2296 | +0.0290 | 0.0341 | [-0.0377, +0.0957] | NO |"
+unsourced,975,197,"| 2 | ₹975 – ₹1,278 | 128 | 0.2145 | 0.1641 | -0.0504 | 0.0321 | [-0.1134, +0.0125] | NO |"
+unsourced,"1,278",197,"| 2 | ₹975 – ₹1,278 | 128 | 0.2145 | 0.1641 | -0.0504 | 0.0321 | [-0.1134, +0.0125] | NO |"
+unsourced,128,197,"| 2 | ₹975 – ₹1,278 | 128 | 0.2145 | 0.1641 | -0.0504 | 0.0321 | [-0.1134, +0.0125] | NO |"
+unsourced,0.2145,197,"| 2 | ₹975 – ₹1,278 | 128 | 0.2145 | 0.1641 | -0.0504 | 0.0321 | [-0.1134, +0.0125] | NO |"
+unsourced,0.1641,197,"| 2 | ₹975 – ₹1,278 | 128 | 0.2145 | 0.1641 | -0.0504 | 0.0321 | [-0.1134, +0.0125] | NO |"
+unsourced,0.0504,197,"| 2 | ₹975 – ₹1,278 | 128 | 0.2145 | 0.1641 | -0.0504 | 0.0321 | [-0.1134, +0.0125] | NO |"
+unsourced,0.0321,197,"| 2 | ₹975 – ₹1,278 | 128 | 0.2145 | 0.1641 | -0.0504 | 0.0321 | [-0.1134, +0.0125] | NO |"
+unsourced,0.1134,197,"| 2 | ₹975 – ₹1,278 | 128 | 0.2145 | 0.1641 | -0.0504 | 0.0321 | [-0.1134, +0.0125] | NO |"
+unsourced,0.0125,197,"| 2 | ₹975 – ₹1,278 | 128 | 0.2145 | 0.1641 | -0.0504 | 0.0321 | [-0.1134, +0.0125] | NO |"
+unsourced,"1,283",198,"| 3 | ₹1,283 – ₹1,574 | 132 | 0.1894 | 0.1818 | -0.0075 | 0.0314 | [-0.0692, +0.0541] | NO |"
+unsourced,"1,574",198,"| 3 | ₹1,283 – ₹1,574 | 132 | 0.1894 | 0.1818 | -0.0075 | 0.0314 | [-0.0692, +0.0541] | NO |"
+unsourced,132,198,"| 3 | ₹1,283 – ₹1,574 | 132 | 0.1894 | 0.1818 | -0.0075 | 0.0314 | [-0.0692, +0.0541] | NO |"
+unsourced,0.1894,198,"| 3 | ₹1,283 – ₹1,574 | 132 | 0.1894 | 0.1818 | -0.0075 | 0.0314 | [-0.0692, +0.0541] | NO |"
+unsourced,0.1818,198,"| 3 | ₹1,283 – ₹1,574 | 132 | 0.1894 | 0.1818 | -0.0075 | 0.0314 | [-0.0692, +0.0541] | NO |"
+unsourced,0.0075,198,"| 3 | ₹1,283 – ₹1,574 | 132 | 0.1894 | 0.1818 | -0.0075 | 0.0314 | [-0.0692, +0.0541] | NO |"
+unsourced,0.0314,198,"| 3 | ₹1,283 – ₹1,574 | 132 | 0.1894 | 0.1818 | -0.0075 | 0.0314 | [-0.0692, +0.0541] | NO |"
+unsourced,0.0692,198,"| 3 | ₹1,283 – ₹1,574 | 132 | 0.1894 | 0.1818 | -0.0075 | 0.0314 | [-0.0692, +0.0541] | NO |"
+unsourced,0.0541,198,"| 3 | ₹1,283 – ₹1,574 | 132 | 0.1894 | 0.1818 | -0.0075 | 0.0314 | [-0.0692, +0.0541] | NO |"
+unsourced,"1,576",199,"| 4 | ₹1,576 – ₹1,942 | 130 | 0.1772 | 0.1231 | -0.0541 | 0.0291 | [-0.1112, +0.0030] | NO |"
+unsourced,"1,942",199,"| 4 | ₹1,576 – ₹1,942 | 130 | 0.1772 | 0.1231 | -0.0541 | 0.0291 | [-0.1112, +0.0030] | NO |"
+unsourced,130,199,"| 4 | ₹1,576 – ₹1,942 | 130 | 0.1772 | 0.1231 | -0.0541 | 0.0291 | [-0.1112, +0.0030] | NO |"
+unsourced,0.1772,199,"| 4 | ₹1,576 – ₹1,942 | 130 | 0.1772 | 0.1231 | -0.0541 | 0.0291 | [-0.1112, +0.0030] | NO |"
+unsourced,0.1231,199,"| 4 | ₹1,576 – ₹1,942 | 130 | 0.1772 | 0.1231 | -0.0541 | 0.0291 | [-0.1112, +0.0030] | NO |"
+unsourced,0.0541,199,"| 4 | ₹1,576 – ₹1,942 | 130 | 0.1772 | 0.1231 | -0.0541 | 0.0291 | [-0.1112, +0.0030] | NO |"
+unsourced,0.0291,199,"| 4 | ₹1,576 – ₹1,942 | 130 | 0.1772 | 0.1231 | -0.0541 | 0.0291 | [-0.1112, +0.0030] | NO |"
+unsourced,0.1112,199,"| 4 | ₹1,576 – ₹1,942 | 130 | 0.1772 | 0.1231 | -0.0541 | 0.0291 | [-0.1112, +0.0030] | NO |"
+unsourced,0.0030,199,"| 4 | ₹1,576 – ₹1,942 | 130 | 0.1772 | 0.1231 | -0.0541 | 0.0291 | [-0.1112, +0.0030] | NO |"
+unsourced,"1,945",200,"| 5 | ₹1,945 – ₹2,495 | 125 | 0.1707 | 0.1520 | -0.0187 | 0.0311 | [-0.0796, +0.0422] | NO |"
+unsourced,"2,495",200,"| 5 | ₹1,945 – ₹2,495 | 125 | 0.1707 | 0.1520 | -0.0187 | 0.0311 | [-0.0796, +0.0422] | NO |"
+unsourced,125,200,"| 5 | ₹1,945 – ₹2,495 | 125 | 0.1707 | 0.1520 | -0.0187 | 0.0311 | [-0.0796, +0.0422] | NO |"
+unsourced,0.1707,200,"| 5 | ₹1,945 – ₹2,495 | 125 | 0.1707 | 0.1520 | -0.0187 | 0.0311 | [-0.0796, +0.0422] | NO |"
+unsourced,0.1520,200,"| 5 | ₹1,945 – ₹2,495 | 125 | 0.1707 | 0.1520 | -0.0187 | 0.0311 | [-0.0796, +0.0422] | NO |"
+unsourced,0.0187,200,"| 5 | ₹1,945 – ₹2,495 | 125 | 0.1707 | 0.1520 | -0.0187 | 0.0311 | [-0.0796, +0.0422] | NO |"
+unsourced,0.0311,200,"| 5 | ₹1,945 – ₹2,495 | 125 | 0.1707 | 0.1520 | -0.0187 | 0.0311 | [-0.0796, +0.0422] | NO |"
+unsourced,0.0796,200,"| 5 | ₹1,945 – ₹2,495 | 125 | 0.1707 | 0.1520 | -0.0187 | 0.0311 | [-0.0796, +0.0422] | NO |"
+unsourced,0.0422,200,"| 5 | ₹1,945 – ₹2,495 | 125 | 0.1707 | 0.1520 | -0.0187 | 0.0311 | [-0.0796, +0.0422] | NO |"
+unsourced,"2,497",201,"| 6 | ₹2,497 – ₹3,080 | 127 | 0.1632 | 0.1811 | +0.0179 | 0.0335 | [-0.0477, +0.0835] | NO |"
+unsourced,"3,080",201,"| 6 | ₹2,497 – ₹3,080 | 127 | 0.1632 | 0.1811 | +0.0179 | 0.0335 | [-0.0477, +0.0835] | NO |"
+unsourced,127,201,"| 6 | ₹2,497 – ₹3,080 | 127 | 0.1632 | 0.1811 | +0.0179 | 0.0335 | [-0.0477, +0.0835] | NO |"
+unsourced,0.1632,201,"| 6 | ₹2,497 – ₹3,080 | 127 | 0.1632 | 0.1811 | +0.0179 | 0.0335 | [-0.0477, +0.0835] | NO |"
+unsourced,0.1811,201,"| 6 | ₹2,497 – ₹3,080 | 127 | 0.1632 | 0.1811 | +0.0179 | 0.0335 | [-0.0477, +0.0835] | NO |"
+unsourced,0.0179,201,"| 6 | ₹2,497 – ₹3,080 | 127 | 0.1632 | 0.1811 | +0.0179 | 0.0335 | [-0.0477, +0.0835] | NO |"
+unsourced,0.0335,201,"| 6 | ₹2,497 – ₹3,080 | 127 | 0.1632 | 0.1811 | +0.0179 | 0.0335 | [-0.0477, +0.0835] | NO |"
+unsourced,0.0477,201,"| 6 | ₹2,497 – ₹3,080 | 127 | 0.1632 | 0.1811 | +0.0179 | 0.0335 | [-0.0477, +0.0835] | NO |"
+unsourced,0.0835,201,"| 6 | ₹2,497 – ₹3,080 | 127 | 0.1632 | 0.1811 | +0.0179 | 0.0335 | [-0.0477, +0.0835] | NO |"
+unsourced,"3,115",202,"| 7 | ₹3,115 – ₹4,491 | 133 | 0.1517 | 0.1128 | -0.0389 | 0.0269 | [-0.0916, +0.0138] | NO |"
+unsourced,"4,491",202,"| 7 | ₹3,115 – ₹4,491 | 133 | 0.1517 | 0.1128 | -0.0389 | 0.0269 | [-0.0916, +0.0138] | NO |"
+unsourced,133,202,"| 7 | ₹3,115 – ₹4,491 | 133 | 0.1517 | 0.1128 | -0.0389 | 0.0269 | [-0.0916, +0.0138] | NO |"
+unsourced,0.1517,202,"| 7 | ₹3,115 – ₹4,491 | 133 | 0.1517 | 0.1128 | -0.0389 | 0.0269 | [-0.0916, +0.0138] | NO |"
+unsourced,0.1128,202,"| 7 | ₹3,115 – ₹4,491 | 133 | 0.1517 | 0.1128 | -0.0389 | 0.0269 | [-0.0916, +0.0138] | NO |"
+unsourced,0.0389,202,"| 7 | ₹3,115 – ₹4,491 | 133 | 0.1517 | 0.1128 | -0.0389 | 0.0269 | [-0.0916, +0.0138] | NO |"
+unsourced,0.0269,202,"| 7 | ₹3,115 – ₹4,491 | 133 | 0.1517 | 0.1128 | -0.0389 | 0.0269 | [-0.0916, +0.0138] | NO |"
+unsourced,0.0916,202,"| 7 | ₹3,115 – ₹4,491 | 133 | 0.1517 | 0.1128 | -0.0389 | 0.0269 | [-0.0916, +0.0138] | NO |"
+unsourced,0.0138,202,"| 7 | ₹3,115 – ₹4,491 | 133 | 0.1517 | 0.1128 | -0.0389 | 0.0269 | [-0.0916, +0.0138] | NO |"
+unsourced,"4,536",203,"| 8 | ₹4,536 – ₹10,786 | 131 | 0.1443 | 0.1298 | -0.0146 | 0.0281 | [-0.0697, +0.0406] | NO |"
+unsourced,"10,786",203,"| 8 | ₹4,536 – ₹10,786 | 131 | 0.1443 | 0.1298 | -0.0146 | 0.0281 | [-0.0697, +0.0406] | NO |"
+unsourced,131,203,"| 8 | ₹4,536 – ₹10,786 | 131 | 0.1443 | 0.1298 | -0.0146 | 0.0281 | [-0.0697, +0.0406] | NO |"
+unsourced,0.1443,203,"| 8 | ₹4,536 – ₹10,786 | 131 | 0.1443 | 0.1298 | -0.0146 | 0.0281 | [-0.0697, +0.0406] | NO |"
+unsourced,0.1298,203,"| 8 | ₹4,536 – ₹10,786 | 131 | 0.1443 | 0.1298 | -0.0146 | 0.0281 | [-0.0697, +0.0406] | NO |"
+unsourced,0.0146,203,"| 8 | ₹4,536 – ₹10,786 | 131 | 0.1443 | 0.1298 | -0.0146 | 0.0281 | [-0.0697, +0.0406] | NO |"
+unsourced,0.0281,203,"| 8 | ₹4,536 – ₹10,786 | 131 | 0.1443 | 0.1298 | -0.0146 | 0.0281 | [-0.0697, +0.0406] | NO |"
+unsourced,0.0697,203,"| 8 | ₹4,536 – ₹10,786 | 131 | 0.1443 | 0.1298 | -0.0146 | 0.0281 | [-0.0697, +0.0406] | NO |"
+unsourced,0.0406,203,"| 8 | ₹4,536 – ₹10,786 | 131 | 0.1443 | 0.1298 | -0.0146 | 0.0281 | [-0.0697, +0.0406] | NO |"
+unsourced,"11,085",204,"| 9 | ₹11,085 – ₹49,547 | 88 | 0.1242 | 0.1023 | -0.0219 | 0.0314 | [-0.0835, +0.0397] | NO |"
+unsourced,"49,547",204,"| 9 | ₹11,085 – ₹49,547 | 88 | 0.1242 | 0.1023 | -0.0219 | 0.0314 | [-0.0835, +0.0397] | NO |"
+unsourced,88,204,"| 9 | ₹11,085 – ₹49,547 | 88 | 0.1242 | 0.1023 | -0.0219 | 0.0314 | [-0.0835, +0.0397] | NO |"
+unsourced,0.1242,204,"| 9 | ₹11,085 – ₹49,547 | 88 | 0.1242 | 0.1023 | -0.0219 | 0.0314 | [-0.0835, +0.0397] | NO |"
+unsourced,0.1023,204,"| 9 | ₹11,085 – ₹49,547 | 88 | 0.1242 | 0.1023 | -0.0219 | 0.0314 | [-0.0835, +0.0397] | NO |"
+unsourced,0.0219,204,"| 9 | ₹11,085 – ₹49,547 | 88 | 0.1242 | 0.1023 | -0.0219 | 0.0314 | [-0.0835, +0.0397] | NO |"
+unsourced,0.0314,204,"| 9 | ₹11,085 – ₹49,547 | 88 | 0.1242 | 0.1023 | -0.0219 | 0.0314 | [-0.0835, +0.0397] | NO |"
+unsourced,0.0835,204,"| 9 | ₹11,085 – ₹49,547 | 88 | 0.1242 | 0.1023 | -0.0219 | 0.0314 | [-0.0835, +0.0397] | NO |"
+unsourced,0.0397,204,"| 9 | ₹11,085 – ₹49,547 | 88 | 0.1242 | 0.1023 | -0.0219 | 0.0314 | [-0.0835, +0.0397] | NO |"
+unsourced,9.9,214,"| **Transactions ($N$)** | 1,435 | 1,577 | +9.9% |"
+unsourced,5.2,215,"| **Policy A Net Total** | ₹1,235,565.73 | ₹1,299,952.45 | +5.2% |"
+unsourced,51.4,217,"| **B0 Waterfall Net Total** | ₹989,434.95 | ₹1,497,969.37 | +51.4% |"
+unsourced,"246,130.78",219,"| **Policy A minus B0 Net** | **+₹246,130.78 (+24.9%)** | **-₹198,016.92 (-13.22%)** | **₹444,147.70 SWING** |"
+unsourced,24.9,219,"| **Policy A minus B0 Net** | **+₹246,130.78 (+24.9%)** | **-₹198,016.92 (-13.22%)** | **₹444,147.70 SWING** |"
+unsourced,13.22,219,"| **Policy A minus B0 Net** | **+₹246,130.78 (+24.9%)** | **-₹198,016.92 (-13.22%)** | **₹444,147.70 SWING** |"
+unsourced,"444,147.70",219,"| **Policy A minus B0 Net** | **+₹246,130.78 (+24.9%)** | **-₹198,016.92 (-13.22%)** | **₹444,147.70 SWING** |"
+unsourced,"2,987,838.35",220,"| **Oracle (B6) Net Total** | ₹2,987,838.35 | ₹3,359,011.12 | +12.4% |"
+unsourced,12.4,220,"| **Oracle (B6) Net Total** | ₹2,987,838.35 | ₹3,359,011.12 | +12.4% |"
+unsourced,"2,082.12",221,"| **Oracle Net Per Txn** | ₹2,082.12 | ₹2,129.37 | +2.3% |"
+unsourced,"2,129.37",221,"| **Oracle Net Per Txn** | ₹2,082.12 | ₹2,129.37 | +2.3% |"
+unsourced,2.3,221,"| **Oracle Net Per Txn** | ₹2,082.12 | ₹2,129.37 | +2.3% |"
+unsourced,15.2,223,| **Top 1% Value Share** | 15.2% | 16.1% | — |
+unsourced,16.1,223,| **Top 1% Value Share** | 15.2% | 16.1% | — |
+unsourced,"444,147.70",225,"The total gap swing of **₹444,147.70** is well inside the test bootstrap 95% CI width of **₹1,108,876.31** ([-₹776,314, +₹332,562])."
+unsourced,"776,314",225,"The total gap swing of **₹444,147.70** is well inside the test bootstrap 95% CI width of **₹1,108,876.31** ([-₹776,314, +₹332,562])."
+unsourced,"332,562",225,"The total gap swing of **₹444,147.70** is well inside the test bootstrap 95% CI width of **₹1,108,876.31** ([-₹776,314, +₹332,562])."
+unsourced,15,236,| **ORD-1** | raw-derived | Distinct orderings per pair is 1 or 2 | **PASS** | 15 pairs verified; 13 full orderings |
+unsourced,100.0,238,"| **P3-1** | Class H | $\lambda=1.0$ reproduces LIVE frozen M4 validation baseline | **PASS** | Net diff = ₹0.00, Agreement = 100.0% |"
+unsourced,329,252,| Policy A validation recovered count | 326 (draft 1) / 329 (draft 2) | **326** | AGREE (with draft 1) |
+unsourced,31,254,| P5 `wait` recoveries on 204 | 31 (draft 1 data error) | **6** | DISAGREE (prior was data error) |
+unsourced,"329,676.00",256,"| Top 3 close-only sum | ₹329,676.00 / ₹323,945.00 | **₹329,675.72** | AGREE (with draft 1 reference) |"
+unsourced,"323,945.00",256,"| Top 3 close-only sum | ₹329,676.00 / ₹323,945.00 | **₹329,675.72** | AGREE (with draft 1 reference) |"
+unsourced,0.52,257,| P2 Concordance rate | 0.52 (draft 1 text) / 0.6223 (draft 2) | **0.6223** | AGREE (with draft 2) |
+unsourced,0.6223,257,| P2 Concordance rate | 0.52 (draft 1 text) / 0.6223 (draft 2) | **0.6223** | AGREE (with draft 2) |
+unsourced,0.6223,257,| P2 Concordance rate | 0.52 (draft 1 text) / 0.6223 (draft 2) | **0.6223** | AGREE (with draft 2) |
+unsourced,24.9,278,"3. **M5 Reporting:** Reframe M5 reporting to reflect the cross-split variance finding (Policy A +24.9% on validation vs -13.2% on test, with Policy A stable to -4.3% while B0 shifts +37.8%), retaining the frozen original test numbers and bootstrap CI verbatim alongside."
+unsourced,13.2,278,"3. **M5 Reporting:** Reframe M5 reporting to reflect the cross-split variance finding (Policy A +24.9% on validation vs -13.2% on test, with Policy A stable to -4.3% while B0 shifts +37.8%), retaining the frozen original test numbers and bootstrap CI verbatim alongside."
+sourced,87,9,
+sourced,6.06,9,
+sourced,"1,435",9,
+sourced,87,10,
+sourced,14.5,16,
+sourced,"1,078,896.67",17,
+sourced,"989,434.95",17,
+sourced,204,19,
+sourced,3.9,19,
+sourced,"596,379.05",19,
+sourced,2.9,19,
+sourced,"348,969.49",19,
+sourced,1998,20,
+sourced,7703,20,
+sourced,196,20,
+sourced,"329,675.72",20,
+sourced,861.02,22,
+sourced,824.32,22,
+sourced,4.3,22,
+sourced,37.8,23,
+sourced,689.50,23,
+sourced,949.89,23,
+sourced,"1,108,876.31",24,
+sourced,"1,435",55,
+sourced,13,56,
+sourced,554,58,
+sourced,38.6,58,
+sourced,153,59,
+sourced,10.7,59,
+sourced,126,60,
+sourced,8.8,60,
+sourced,117,61,
+sourced,8.2,61,
+sourced,116,62,
+sourced,8.1,62,
+sourced,"1,348",65,
+sourced,93.9,65,
+sourced,87,65,
+sourced,6.1,65,
+sourced,885,66,
+sourced,61.7,66,
+sourced,550,66,
+sourced,38.3,66,
+sourced,"1,365",67,
+sourced,95.1,67,
+sourced,70,67,
+sourced,4.9,67,
+sourced,97.03,70,
+sourced,"279,558.65",70,
+sourced,567,72,
+sourced,260,72,
+sourced,"1,261",73,
+sourced,411,73,
+sourced,"1,261",74,
+sourced,35,74,
+sourced,918,75,
+sourced,555,75,
+sourced,"1,435",76,
+sourced,174,76,
+sourced,"1,435",77,
+sourced,13,81,
+sourced,87,87,
+sourced,6.06,87,
+sourced,"1,348",88,
+sourced,93.94,88,
+sourced,"1,435",109,
+sourced,326,109,
+sourced,22.72,109,
+sourced,"2,680.00",109,
+sourced,"38,468.39",109,
+sourced,"1,235,565.73",109,
+sourced,861.02,109,
+sourced,"1,435",110,
+sourced,272,110,
+sourced,18.95,110,
+sourced,"992,650.95",110,
+sourced,"3,216.00",110,
+sourced,"989,434.95",110,
+sourced,689.50,110,
+sourced,"1,577",111,
+sourced,361,111,
+sourced,22.89,111,
+sourced,"1,302,749.45",111,
+sourced,"2,797.00",111,
+sourced,"40,673.29",111,
+sourced,"1,299,952.45",111,
+sourced,824.32,111,
+sourced,"1,577",112,
+sourced,312,112,
+sourced,19.78,112,
+sourced,"1,501,443.37",112,
+sourced,"3,474.00",112,
+sourced,"1,497,969.37",112,
+sourced,949.89,112,
+sourced,"1,577",113,
+sourced,266,113,
+sourced,16.87,113,
+sourced,"1,363,512.35",113,
+sourced,"2,427.00",113,
+sourced,"11,300.31",113,
+sourced,"1,361,085.35",113,
+sourced,863.09,113,
+sourced,"1,577",114,
+sourced,818,114,
+sourced,51.87,114,
+sourced,"3,360,246.12",114,
+sourced,"1,235.00",114,
+sourced,"37,399.62",114,
+sourced,"3,359,011.12",114,
+sourced,0.3329,123,
+sourced,567,123,
+sourced,0.2173,124,
+sourced,"1,261",124,
+sourced,0.1794,125,
+sourced,"1,261",125,
+sourced,0.2197,126,
+sourced,918,126,
+sourced,0.1381,127,
+sourced,"1,435",127,
+sourced,0.1029,128,
+sourced,"1,435",128,
+sourced,"1,078,896.67",133,
+sourced,"1,058,557.21",133,
+sourced,"20,339.46",133,
+sourced,288,133,
+sourced,20.07,133,
+sourced,567,133,
+sourced,174,133,
+sourced,"1,090,067.85",134,
+sourced,"1,139,204.48",134,
+sourced,"49,136.63",134,
+sourced,290,134,
+sourced,20.21,134,
+sourced,567,134,
+sourced,174,134,
+sourced,"1,103,310.75",135,
+sourced,"1,182,206.78",135,
+sourced,"78,896.03",135,
+sourced,294,135,
+sourced,20.49,135,
+sourced,567,135,
+sourced,174,135,
+sourced,"1,196,671.25",136,
+sourced,"1,183,920.74",136,
+sourced,"12,750.51",136,
+sourced,319,136,
+sourced,22.23,136,
+sourced,174,136,
+sourced,"1,235,565.73",137,
+sourced,"1,235,565.73",137,
+sourced,326,137,
+sourced,22.72,137,
+sourced,555,137,
+sourced,411,137,
+sourced,260,137,
+sourced,174,137,
+sourced,35,137,
+sourced,14.5,140,
+sourced,204,144,
+sourced,"529,259.10",151,
+sourced,"281,849.54",152,
+sourced,"67,119.95",153,
+sourced,4518,153,
+sourced,191,154,
+sourced,"6,044,992.33",154,
+sourced,"596,379.05",155,
+sourced,"348,969.49",156,
+sourced,"247,409.56",157,
+sourced,1998,160,
+sourced,"139,904.76",160,
+sourced,7703,161,
+sourced,"114,085.35",161,
+sourced,196,162,
+sourced,"75,685.61",162,
+sourced,"329,675.72",163,
+sourced,166.5,163,
+sourced,204,171,
+sourced,"198,016.92",174,
+sourced,"198,016.92",176,
+sourced,567,185,
+sourced,0.3329,185,
+sourced,"1,261",186,
+sourced,0.2173,186,
+sourced,"1,261",187,
+sourced,0.1794,187,
+sourced,918,188,
+sourced,0.2197,188,
+sourced,"1,435",189,
+sourced,0.1381,189,
+sourced,"1,435",190,
+sourced,0.1029,190,
+sourced,"1,261",192,
+sourced,"1,435",214,
+sourced,"1,577",214,
+sourced,"1,235,565.73",215,
+sourced,"1,299,952.45",215,
+sourced,861.02,216,
+sourced,824.32,216,
+sourced,4.3,216,
+sourced,"989,434.95",217,
+sourced,"1,497,969.37",217,
+sourced,689.50,218,
+sourced,949.89,218,
+sourced,37.8,218,
+sourced,"198,016.92",219,
+sourced,"3,359,011.12",220,
+sourced,"279,558.65",222,
+sourced,"139,904.76",222,
+sourced,"1,108,876.31",225,
+sourced,13,236,
+sourced,"198,016.92",242,
+sourced,87,251,
+sourced,87,251,
+sourced,326,252,
+sourced,326,252,
+sourced,"989,434.95",253,
+sourced,"989,434.95",253,
+sourced,204,254,
+sourced,204,255,
+sourced,"329,675.72",256,
+sourced,"1,235,565.73",258,
+sourced,"1,235,565.73",258,
+sourced,4.3,278,
+sourced,37.8,278,
+allowed,2,1,
+allowed,2,1,
+allowed,2,1,
+allowed,1,3,
+allowed,2,5,
+allowed,1,8,
+allowed,0,8,
+allowed,0.0,9,
+allowed,0,9,
+allowed,0.00,9,
+allowed,2,11,
+allowed,95,12,
+allowed,0.50,12,
+allowed,1,14,
+allowed,5,14,
+allowed,3,15,
+allowed,0.0,16,
+allowed,1.0,16,
+allowed,0.0,17,
+allowed,4,18,
+allowed,8,19,
+allowed,6,19,
+allowed,3,20,
+allowed,5,21,
+allowed,3,23,
+allowed,95,24,
+allowed,2,28,
+allowed,1,30,
+allowed,12,50,
+allowed,6,50,
+allowed,6,50,
+allowed,12,52,
+allowed,2,54,
+allowed,5,57,
+allowed,1,58,
+allowed,2,59,
+allowed,3,60,
+allowed,4,61,
+allowed,5,62,
+allowed,0,65,
+allowed,3,69,
+allowed,0,77,
+allowed,4,79,
+allowed,3,85,
+allowed,0,89,
+allowed,0.00,89,
+allowed,0.0,92,
+allowed,0,92,
+allowed,0.00,92,
+allowed,0.00,93,
+allowed,4,97,
+allowed,1,99,
+allowed,1,102,
+allowed,100,102,
+allowed,2,106,
+allowed,95,107,
+allowed,0.00,110,
+allowed,0.00,112,
+allowed,1,116,
+allowed,6,116,
+allowed,0.01,116,
+allowed,5,120,
+allowed,0.00,133,
+allowed,3,133,
+allowed,0.25,134,
+allowed,0.50,135,
+allowed,0.75,136,
+allowed,1.00,137,
+allowed,0.00,137,
+allowed,1,139,
+allowed,1.0,139,
+allowed,0.00,139,
+allowed,0.0,140,
+allowed,1.0,140,
+allowed,6,144,
+allowed,4,148,
+allowed,7,151,
+allowed,5,152,
+allowed,1,153,
+allowed,8,155,
+allowed,6,156,
+allowed,2,157,
+allowed,3,159,
+allowed,1,160,
+allowed,2,161,
+allowed,3,162,
+allowed,3,163,
+allowed,7,167,
+allowed,1,176,
+allowed,0.01,176,
+allowed,8,180,
+allowed,95,180,
+allowed,95,183,
+allowed,0,183,
+allowed,95,193,
+allowed,0,193,
+allowed,0,195,
+allowed,1,196,
+allowed,2,197,
+allowed,3,198,
+allowed,4,199,
+allowed,5,200,
+allowed,6,201,
+allowed,7,202,
+allowed,8,203,
+allowed,9,204,
+allowed,0,206,
+allowed,10,206,
+allowed,95,206,
+allowed,9,210,
+allowed,1,223,
+allowed,95,225,
+allowed,10,229,
+allowed,1,234,
+allowed,6,234,
+allowed,2,235,
+allowed,1,236,
+allowed,1,236,
+allowed,2,236,
+allowed,2,237,
+allowed,4,237,
+allowed,1,238,
+allowed,1.0,238,
+allowed,0.00,238,
+allowed,2,239,
+allowed,0,239,
+allowed,100,239,
+allowed,3,240,
+allowed,1,241,
+allowed,5,241,
+allowed,5,241,
+allowed,0.00,241,
+allowed,1,242,
+allowed,2,243,
+allowed,1,244,
+allowed,2,245,
+allowed,1,246,
+allowed,1,251,
+allowed,0,251,
+allowed,2,251,
+allowed,1,251,
+allowed,1,252,
+allowed,2,252,
+allowed,1,252,
+allowed,1,254,
+allowed,6,254,
+allowed,8,255,
+allowed,8,255,
+allowed,3,256,
+allowed,1,256,
+allowed,1,257,
+allowed,2,257,
+allowed,2,257,
+allowed,11,262,
+allowed,1,276,
+allowed,0,276,
+allowed,0,276,
+allowed,0.00,276,
+allowed,0,276,
+allowed,2,277,
+allowed,12,277,
+allowed,12,277,
+allowed,3,278,
+allowed,4,279,
+allowed,5,280,

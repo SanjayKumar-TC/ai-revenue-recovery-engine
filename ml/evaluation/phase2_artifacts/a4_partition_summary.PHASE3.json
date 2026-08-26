@@ -1,0 +1,28 @@
+{
+  "split": "test",
+  "data_operation": "OP-F",
+  "derived_count": 204,
+  "derived_net_diff": -247409.56,
+  "close_only_n": 7,
+  "close_only_total": 529259.1000000001,
+  "wait_only_n": 5,
+  "wait_only_total": 281849.54,
+  "both_n": 1,
+  "both_total": 67119.95,
+  "neither_n": 191,
+  "neither_total": 6044992.33,
+  "close_recovered_n": 8,
+  "close_recovered_total": 596379.05,
+  "wait_recovered_n": 6,
+  "wait_recovered_total": 348969.49,
+  "top3_close_only_ids": [
+    1998,
+    7703,
+    196
+  ],
+  "top3_close_only_sum": 329675.72000000003,
+  "top3_pct_of_test_gap": 133.25100291193277,
+  "both_transaction_ids": [
+    4518
+  ]
+}

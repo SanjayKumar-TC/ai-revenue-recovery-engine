@@ -1,0 +1,50 @@
+{
+  "cross_split_stability": {
+    "val_n": 1435,
+    "test_n": 1577,
+    "pa_net_per_txn_val": 861.021418118467,
+    "pa_net_per_txn_test": 824.3198776157261,
+    "pa_pct_change": -4.2625583673565615,
+    "b0_net_per_txn_val": 689.5017073170732,
+    "b0_net_per_txn_test": 949.8854597336716,
+    "b0_pct_change": 37.76404752205476,
+    "gap_val": 246130.78500000015,
+    "gap_test": -198016.92299999995,
+    "gap_swing": 444147.7080000001,
+    "test_bootstrap_ci_low": -776313.86,
+    "test_bootstrap_ci_high": 332562.45,
+    "test_bootstrap_ci_width": 1108876.31,
+    "oracle_net_val": 2780330.5999999996,
+    "oracle_net_per_txn_val": 1937.5126132404177,
+    "oracle_net_test": 3359011.125,
+    "oracle_net_per_txn_test": 2130.000713379835,
+    "val_max_amount": 279558.65,
+    "test_max_amount": 244011.3,
+    "val_top1_value_share": 19.47005767127515,
+    "test_top1_value_share": 18.563547966483736
+  },
+  "cross_action_ranking": {
+    "concordance": 0.6223,
+    "ci_low": 0.6071,
+    "ci_high": 0.6376,
+    "se": 0.0078,
+    "z_score": 15.68,
+    "val_wt_concordance": 0.6468,
+    "oracle_agreement_m4": 23.1,
+    "oracle_agreement_b0": 12.1,
+    "oracle_agreement_m4_top_decile": 44.4,
+    "oracle_agreement_b0_top_decile": 8.3,
+    "provenance": "Class R REFERENCE \u2014 computed in prior Phase 2 diagnostic run (draft 2); not recomputed in Phase 3."
+  },
+  "frozen_test_result": {
+    "pa_net": 1299952.4470000002,
+    "b0_net": 1497969.37,
+    "diff": -198016.92299999995,
+    "ci": [
+      -776313.86,
+      332562.45
+    ],
+    "b1_random_net": 1361085.352,
+    "oracle_net": 3359011.125
+  }
+}

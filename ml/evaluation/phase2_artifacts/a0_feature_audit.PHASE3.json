@@ -1,0 +1,63 @@
+{
+  "split": "val",
+  "data_operation": "OP-V",
+  "feature_count": 12,
+  "feature_names": [
+    "failure_type",
+    "action",
+    "segment",
+    "payment_method",
+    "failure_action",
+    "segment_action",
+    "risk_score",
+    "attempt_number",
+    "contact_fatigue_score",
+    "log1p_amount",
+    "log1p_lifetime_successful_txns",
+    "log1p_lifetime_failed_txns"
+  ],
+  "metadata_feature_count": 12,
+  "metadata_model_class": "LogisticRegression",
+  "distinct_full_orderings": 13,
+  "top_orderings": [
+    {
+      "order": "discount>retry>payment_link>reminder>wait>close",
+      "count": 554
+    },
+    {
+      "order": "retry>discount>payment_link>reminder>wait>close",
+      "count": 153
+    },
+    {
+      "order": "retry>payment_link>discount>reminder>wait>close",
+      "count": 126
+    },
+    {
+      "order": "payment_link>retry>discount>reminder>wait>close",
+      "count": 117
+    },
+    {
+      "order": "payment_link>discount>retry>reminder>wait>close",
+      "count": 116
+    }
+  ],
+  "val_amount_min": 97.03,
+  "val_amount_max": 279558.65,
+  "allowed_counts": {
+    "retry": 567,
+    "payment_link": 1261,
+    "reminder": 1261,
+    "discount": 918,
+    "wait": 1435,
+    "close": 1435
+  },
+  "actual_selections": {
+    "retry": 260,
+    "payment_link": 411,
+    "reminder": 35,
+    "discount": 555,
+    "wait": 174,
+    "close": 0
+  },
+  "verdict": "INTERACTIONS PRESENT"
+}

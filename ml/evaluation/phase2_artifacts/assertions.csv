@@ -1,0 +1,17 @@
+id,classification,description,passed,details
+ACC-1,MECHANICAL,Net=Gross-Cost for every policy row,True,6 rows checked. Failures: None
+ACC-2,MECHANICAL,Every FIGURES value matches its artifact on disk,True,Checked 58 values. Mismatches: 0
+ORD-1,MECHANICAL,Distinct orderings per pair is 1 or 2,True,15 pairs. Full orderings=13.
+ORD-2,MECHANICAL,A0 verdict is INTERACTIONS PRESENT,True,Verdict: INTERACTIONS PRESENT
+P3-1,MECHANICAL,lambda=1.0 reproduces live M4 baseline within 0.01 and 100% agreement,True,"Net diff: Rs.0.0000, Agreement: 100.00%"
+P3-2,MECHANICAL,lambda=0 simulated distribution matches independent derivation,True,100% per-transaction action match
+P3-3,INFORMATIONAL,Every lambda row delta explained by Pbar denominator,True,Allowed-only Pbar denominator shift documented in a3_pbar.csv
+P5-1..5,MECHANICAL,Five partition balance assertions on wait->close test txns,True,All 5 identities hold within tolerance 1.00
+SAME-1,MECHANICAL,Same-action delta is zero,True,same_delta<0.01; prerequisite for ATTR-1
+ATTR-1,MECHANICAL,Matrix residual < 0.01,True,Residual=Rs.0.0000
+CAL-1,MECHANICAL,Every calibration row has non-null SE and 95% CI,True,Checked 6 action + 10 decile + 5 bias rows
+XREF-1,MECHANICAL,All cross-section identity checks pass (with negative control),True,9/9 checks passed; failed=none; negative control detected injected perturbation (X1=False)
+FROZ-1,MECHANICAL,Every recomputed sidecar matches its frozen original except where pre-declared,True,6/6 frozen artifact(s) diffed against their sidecars; 0 pre-declared field divergence(s); 0 undeclared; failures=none
+CAL-2,MECHANICAL,No significance claim attaches to CI-spanning-zero calibration row,True,Violations: None
+SPLIT-1,MECHANICAL,Every markdown table declares split/data-op,True,9/9 labelled. Violations: None
+LIT-1,MECHANICAL,New report has zero unsourced numeric tokens (detector proven to fire on the preserved original),True,0 unsourced; 7 Class R; fail-first gate on preserved original: PASS (3 required token(s) flagged unsourced); injection control fired; per-token classifications in lit1_pre_phase3_scan.csv

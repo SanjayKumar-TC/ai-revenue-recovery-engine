@@ -1,0 +1,15 @@
+{
+  "convention": "C1",
+  "description": "gross is POST-haircut; net = gross - intervention_cost; discount_amount is reporting-only",
+  "source_file": "ml/experiment/experiment_metrics.py",
+  "p1_pass": true,
+  "p1_source_lines": [
+    45
+  ],
+  "p2_pass": true,
+  "p2_source_lines": [
+    53
+  ],
+  "p3_pass": true,
+  "p3_violation_lines": []
+}

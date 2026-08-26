@@ -455,93 +455,95 @@ def test_11_empty_allowed():
 
 def test_12_close_wins_ev():
     """
-    Close must win via actual EV comparison, NOT because policy forced it.
+    Test 12: Close EV Evaluation, Wait Comparison, and Priority Tie-Breaking.
 
-    Fixture design:
-        Score only actions with intervention_cost > 0 (retry, payment_link,
-        reminder) plus close. With P=0 for all:
-            retry:        EV = 0×1000 − 2  = −2.00
-            payment_link: EV = 0×1000 − 5  = −5.00
-            reminder:     EV = 0×1000 − 3  = −3.00
-            close:        EV = 0 (by definition)
-
-        Close wins by genuine EV comparison: it's the only action with
-        non-negative EV.
-
-    Why wait and discount are excluded from the scored set:
-        Both have intervention_cost = 0. With P = 0, their EV = 0,
-        tying with close. wait has higher tiebreak priority than close
-        (index 1 vs 5), so it would win the tie. The thesis — "the best
-        recovery action isn't always an action" — is about active
-        interventions (retry/payment_link/reminder) losing to non-
-        intervention (close), not about which zero-cost action wins
-        tiebreaks. We separately verify that wait and discount would
-        also have EV <= 0.
+    Verifies:
+      1. Close genuinely wins when EV(close) > EV(wait) across the full candidate set
+         (including active interventions).
+      2. Wait wins when EV(wait) > EV(close).
+      3. Wait wins equal-EV ties over close according to ACTION_PRIORITY_ORDER
+         (index 1 for wait vs index 5 for close).
     """
     amount = 1000.0
+    dp = 10.0
 
-    # Scored set: actions with cost > 0, plus close
-    scored_probs = {
+    # -------------------------------------------------------------
+    # 1. Close genuinely wins on EV against the full candidate set
+    # -------------------------------------------------------------
+    probs_close_wins = {
         "retry": 0.0,
         "payment_link": 0.0,
         "reminder": 0.0,
-        "close": 0.0,
+        "discount": 0.0,
+        "wait": 0.05,
+        "close": 0.20,
     }
+    ev_close_wins = {a: calculate_ev(a, p, amount, dp) for a, p in probs_close_wins.items()}
+    best_1, best_ev_1, reason_1 = select_best_action(ev_close_wins)
 
-    ev_results = {}
-    for action, p in scored_probs.items():
-        ev_results[action] = calculate_ev(action, p, amount)
-
-    best_action, best_ev, reason = select_best_action(ev_results)
-
-    # Also verify wait and discount would have EV <= 0
-    ev_wait = calculate_ev("wait", 0.0, amount)
-    ev_discount = calculate_ev("discount", 0.0, amount, discount_percent=10.0)
-
-    # Assertions
-    retry_neg = ev_results["retry"]["expected_net_value"] < 0
-    plink_neg = ev_results["payment_link"]["expected_net_value"] < 0
-    remind_neg = ev_results["reminder"]["expected_net_value"] < 0
-    discount_leq = ev_discount["expected_net_value"] <= 0
-    wait_leq = ev_wait["expected_net_value"] <= 0
-    close_zero = ev_results["close"]["expected_net_value"] == 0.0
-    close_selected = best_action == "close"
-    multiple_scored = len(ev_results) > 1
-    ev_reason = reason in ["highest_expected_net_value", "highest_expected_net_value_tiebreak"]
-
-    passed = (
-        retry_neg and plink_neg and remind_neg and
-        discount_leq and wait_leq and close_zero and
-        close_selected and multiple_scored and ev_reason
+    part1_ok = (
+        best_1 == "close" and
+        reason_1 == "highest_expected_net_value" and
+        ev_close_wins["close"]["expected_net_value"] == 200.0 and
+        ev_close_wins["close"]["expected_net_value"] > ev_close_wins["wait"]["expected_net_value"] and
+        all(ev_close_wins["close"]["expected_net_value"] > ev_close_wins[a]["expected_net_value"]
+            for a in ["retry", "payment_link", "reminder", "discount", "wait"])
     )
 
-    details_lines = ["Scored actions (EV comparison set):"]
-    for a in ["retry", "payment_link", "reminder", "close"]:
-        r = ev_results[a]
-        details_lines.append(
-            f"  {a:15s} P={r['predicted_probability']:.4f}  "
-            f"cost={r['intervention_cost']:.1f}  "
-            f"EV={r['expected_net_value']:.4f}"
-        )
-    details_lines.append(f"Unsored (verified separately):")
-    details_lines.append(
-        f"  {'wait':15s} P={ev_wait['predicted_probability']:.4f}  "
-        f"cost={ev_wait['intervention_cost']:.1f}  "
-        f"EV={ev_wait['expected_net_value']:.4f}  (<=0: {wait_leq})"
-    )
-    details_lines.append(
-        f"  {'discount':15s} P={ev_discount['predicted_probability']:.4f}  "
-        f"cost={ev_discount['intervention_cost']:.1f}  "
-        f"EV={ev_discount['expected_net_value']:.4f}  (<=0: {discount_leq})"
-    )
-    details_lines.append(f"Selected: {best_action} (EV={best_ev['expected_net_value']:.4f})")
-    details_lines.append(f"Reason: {reason}")
-    details_lines.append(f"Multiple actions scored: {multiple_scored} ({len(ev_results)} actions)")
-    details_lines.append(f"Close NOT policy-forced: True (selected via EV comparison)")
-    details_lines.append(f"All active interventions EV < 0: {retry_neg and plink_neg and remind_neg}")
+    # -------------------------------------------------------------
+    # 2. Wait wins when EV(wait) > EV(close)
+    # -------------------------------------------------------------
+    probs_wait_wins = {
+        "retry": 0.0,
+        "payment_link": 0.0,
+        "reminder": 0.0,
+        "discount": 0.0,
+        "wait": 0.20,
+        "close": 0.05,
+    }
+    ev_wait_wins = {a: calculate_ev(a, p, amount, dp) for a, p in probs_wait_wins.items()}
+    best_2, best_ev_2, reason_2 = select_best_action(ev_wait_wins)
 
-    return _report(12, "CLOSE WINS THROUGH GENUINE EV COMPARISON", passed,
-                   "\n".join(details_lines))
+    part2_ok = (
+        best_2 == "wait" and
+        reason_2 == "highest_expected_net_value" and
+        ev_wait_wins["wait"]["expected_net_value"] == 200.0 and
+        ev_wait_wins["wait"]["expected_net_value"] > ev_wait_wins["close"]["expected_net_value"]
+    )
+
+    # -------------------------------------------------------------
+    # 3. Equal-EV tie: wait beats close via ACTION_PRIORITY_ORDER
+    # -------------------------------------------------------------
+    probs_tie = {
+        "retry": 0.0,
+        "payment_link": 0.0,
+        "reminder": 0.0,
+        "discount": 0.0,
+        "wait": 0.10,
+        "close": 0.10,
+    }
+    ev_tie = {a: calculate_ev(a, p, amount, dp) for a, p in probs_tie.items()}
+    best_3, best_ev_3, reason_3 = select_best_action(ev_tie)
+
+    part3_ok = (
+        best_3 == "wait" and
+        reason_3 == "highest_expected_net_value_tiebreak" and
+        abs(ev_tie["wait"]["expected_net_value"] - ev_tie["close"]["expected_net_value"]) < EV_TIE_TOLERANCE and
+        ACTION_PRIORITY_ORDER.index("wait") < ACTION_PRIORITY_ORDER.index("close")
+    )
+
+    passed = part1_ok and part2_ok and part3_ok
+
+    details = (
+        f"1. Close wins EV: selected={best_1} (EV={best_ev_1['expected_net_value']:.2f}, "
+        f"wait EV={ev_close_wins['wait']['expected_net_value']:.2f}, reason={reason_1}) -> {part1_ok}\n"
+        f"2. Wait wins EV: selected={best_2} (EV={best_ev_2['expected_net_value']:.2f}, "
+        f"close EV={ev_wait_wins['close']['expected_net_value']:.2f}, reason={reason_2}) -> {part2_ok}\n"
+        f"3. Equal-EV tiebreak: selected={best_3} (reason={reason_3}, "
+        f"wait_prio={ACTION_PRIORITY_ORDER.index('wait')}, close_prio={ACTION_PRIORITY_ORDER.index('close')}) -> {part3_ok}"
+    )
+
+    return _report(12, "CLOSE EVALUATION, WAIT COMPARISON & PRIORITY TIE-BREAKING", passed, details)
 
 
 # ============================================================

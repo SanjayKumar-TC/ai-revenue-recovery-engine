@@ -1,0 +1,241 @@
+================================================================================
+SHA-256 PRE-RUN MANIFEST
+================================================================================
+  a0_feature_audit.json: f2f880b710e11c48...
+  a0_pair_orderings.csv: 7c2722c2002b3da4...
+  a1_close_wait.json: 752cd8193306ce18...
+  a2_convention.json: 7e659aea287d033b...
+  a2_policy_rows.csv: 217de10324f76501...
+  a3_harness_baseline.json: 0c38d3c7d550ccc0...
+  a3_lambda_sweep.csv: c8ef9da3f1d417c1...
+  a3_pbar.csv: 3fce92840c8144d6...
+  a4_partition_rows.csv: 60ef0037636626e9...
+  a4_partition_summary.json: a7507d3b474e2baa...
+  a4_population.json: 43463d43d72af1c9...
+  a5_attribution.csv: 642625fdfa5c7683...
+  a5_substitution_matrix.csv: fe2b8d694e2cf443...
+  a6_calibration_actions.csv: fef4b0dbdf19f9e2...
+  a6_calibration_deciles.csv: 1513e54b5b9c22d3...
+  a6_relative_bias.csv: 006551be5bc7437c...
+  a8_carry_forward.json: 69695d870c63af92...
+  assertions.csv: 1a7ea997b556b800...
+  class_r_comparisons.csv: 7ea85d4f28896cc9...
+  class_r_reconciliation.csv: 3eca61c21b7f984b...
+  figures_registry.csv: 6bdd72c495ea1cbd...
+  lit1_pre_phase3_scan.csv: fccbe16ac4879838...
+  run_log.txt: 3f2fd68e15d4b49c...
+  ml\evaluation\m5_2_phase2_diagnostic.md: 6b6f4e0aaf3de260... (tracked, not frozen)
+================================================================================
+PRESERVE PRE-PHASE-3 REPORT (immutable)
+================================================================================
+  Snapshot already exists — NOT overwriting: ml\evaluation\_pre_phase3_snapshot\m5_2_phase2_diagnostic.PRE_PHASE3.md
+  Snapshot SHA-256 (immutable for the rest of this run): 6b6f4e0aaf3de26020b78f014e283a6ee60f00761e4297d22026b612dc6d578c
+  Snapshot lines: 280
+================================================================================
+A0 — M2 FEATURE CONSTRUCTION AND ACTION-PAIR ORDERING [GATE]
+================================================================================
+A0.1 Feature Count: 12 columns.
+A0.2 Ordering Census: 13 distinct full orderings across 1435 validation transactions.
+A0 VERDICT: INTERACTIONS PRESENT
+================================================================================
+A1 — RECOMPUTE P(close) > P(wait) (OP-V)
+================================================================================
+P(close) > P(wait): 87, Flips on corrected EV: 0, Delta: Rs.0.00
+================================================================================
+A2 — ACCOUNTING CONVENTION (AST) AND POLICY ROWS
+================================================================================
+Convention determined via AST: C1 (P1 lines=[45], P2 lines=[53])
+  [VAL OP-V] policy_a       : Rec=326 (22.72%), Net=Rs.1,235,565.73
+  [VAL OP-V] b0_waterfall   : Rec=272 (18.95%), Net=Rs.  989,434.95
+  [TEST OP-F] policy_a       : Rec=361 (22.89%), Net=Rs.1,299,952.45
+  [TEST OP-F] b0_waterfall   : Rec=312 (19.78%), Net=Rs.1,497,969.37
+  [TEST OP-F] b1_random      : Rec=266 (16.87%), Net=Rs.1,361,085.35
+  [TEST OP-F] b6_oracle      : Rec=818 (51.87%), Net=Rs.3,359,011.12
+================================================================================
+A3 — P3 SHRINKAGE SWEEP (OP-V)
+================================================================================
+Live M4 Validation Net Baseline: Rs. 1,235,565.73
+P3-1: Net diff=0.0000, Agreement=100.00%
+P3-2: lambda=0 match: True
+================================================================================
+A4 — P5 PARTITION (OP-F)
+================================================================================
+Wait->close set: 204 txns, Net diff=Rs.-247,409.56
+================================================================================
+A6 — CALIBRATION WITH UNCERTAINTY (OP-V)
+================================================================================
+  A6 SE convention probe (measurement only, no value changed):
+    Snapshot SEs reproduced to +/-0.00005 by: poisson_binomial 1/6, realized_single 0/6, pred_single 0/6
+      retry         snapshot_se=0.0188 used=0.019899 pb=0.018992 pb_match=False snap_excl0=False pb_excl0=False
+      payment_link  snapshot_se=0.0109 used=0.011536 pb=0.010970 pb_match=False snap_excl0=False pb_excl0=False
+      reminder      snapshot_se=0.0099 used=0.010308 pb=0.010118 pb_match=False snap_excl0=True pb_excl0=True
+      discount      snapshot_se=0.013 used=0.013697 pb=0.012668 pb_match=False snap_excl0=False pb_excl0=False
+      wait          snapshot_se=0.0085 used=0.009026 pb=0.008539 pb_match=True snap_excl0=False pb_excl0=False
+      close         snapshot_se=0.0078 used=0.008263 pb=0.007606 pb_match=False snap_excl0=False pb_excl0=False
+    Snapshot decile Ns (reference only; authoritative binning is index-based): [132, 135, 128, 132, 130, 125, 127, 133, 131, 88]
+  A6 decile binning: bins ordered and non-overlapping = False
+    computed decile Ns: [127, 126, 126, 126, 126, 126, 126, 126, 126, 126]
+    snapshot decile Ns: [132, 135, 128, 132, 130, 125, 127, 133, 131, 88]  ->  DIFFER
+================================================================================
+A5 — FULL SUBSTITUTION ATTRIBUTION (rebuilt from per_transaction_decisions.csv)
+================================================================================
+3.1  Total gap: Rs.1,299,952.45 - Rs.1,497,969.37 = Rs.-198,016.92
+3.2  SAME-1: |same_delta|=0.0000 < 0.01 -> PASS
+3.4  ATTR-1: residual=0.0000 -> PASS
+================================================================================
+A8 — CARRY-FORWARD FIGURES
+================================================================================
+A8: oracle_val_net=Rs.2,780,330.60, oracle_test_net=Rs.3,359,011.12
+FIGURES registry: 203 entries.
+================================================================================
+XREF-1 — CROSS-SECTION IDENTITY CHECKS
+================================================================================
+XREF-1 NEGATIVE CONTROL: Perturbing a4_derived_count by +1...
+  X1: A4.derived_count=205 vs matrix.wait->close.count=204 | diff=1 | FAIL
+  X2: A4.net_diff(signed)=-247409.56 vs matrix.wc.delta=-247409.56 | diff=0.0000 | PASS
+  X3: A2.pa_test_net - A2.b0_test_net=-198016.92299999995 vs A5.total_gap_raw=-198016.92299999995 | diff=0.0000 | PASS
+  X4a: top3_sum/|total_test_gap|*100=166.4886591536422 vs FIGURES.a4_top3_pct_of_total_test_gap=166.48865915364212 | diff=0.0000 | PASS
+  X4b: top3_sum/|waitclose_subset_gap|*100=133.25100291193277 vs FIGURES.a4_top3_pct_of_waitclose_subset_gap=133.25100291193277 | diff=0.0000 | PASS
+  X4c: |wc_subset_gap|-|total_gap| via A5 matrix=49392.637000000046 vs same separation via A4 net_diff and A2 nets=49392.637000000046 | diff=0.0000 | PASS
+  X5: A2.b6_test_net/test_N=2130.000713379835 vs A8.oracle_net_per_txn_test=2130.000713379835 | diff=0.0000 | PASS
+  X6: flips==0==0 -> True; delta==0.00~=0 -> True | PASS
+  X7: sum(matrix.delta)=-198016.92300000004 vs A5.total_gap_raw=-198016.92299999995 | diff=0.0000 | PASS
+  FAIL X1:   X1: A4.derived_count=205 vs matrix.wait->close.count=204 | diff=1 | FAIL
+  CONFIRMED: perturbation detected (X1=False, overall pass=False).
+  Restored a4_derived_count = 204 (was perturbed to 205)
+
+XREF-1 REAL RUN:
+  X1: A4.derived_count=204 vs matrix.wait->close.count=204 | diff=0 | PASS
+  X2: A4.net_diff(signed)=-247409.56 vs matrix.wc.delta=-247409.56 | diff=0.0000 | PASS
+  X3: A2.pa_test_net - A2.b0_test_net=-198016.92299999995 vs A5.total_gap_raw=-198016.92299999995 | diff=0.0000 | PASS
+  X4a: top3_sum/|total_test_gap|*100=166.4886591536422 vs FIGURES.a4_top3_pct_of_total_test_gap=166.48865915364212 | diff=0.0000 | PASS
+  X4b: top3_sum/|waitclose_subset_gap|*100=133.25100291193277 vs FIGURES.a4_top3_pct_of_waitclose_subset_gap=133.25100291193277 | diff=0.0000 | PASS
+  X4c: |wc_subset_gap|-|total_gap| via A5 matrix=49392.637000000046 vs same separation via A4 net_diff and A2 nets=49392.637000000046 | diff=0.0000 | PASS
+  X5: A2.b6_test_net/test_N=2130.000713379835 vs A8.oracle_net_per_txn_test=2130.000713379835 | diff=0.0000 | PASS
+  X6: flips==0==0 -> True; delta==0.00~=0 -> True | PASS
+  X7: sum(matrix.delta)=-198016.92300000004 vs A5.total_gap_raw=-198016.92299999995 | diff=0.0000 | PASS
+XREF-1: All 9 checks PASS.
+XREF-1 measured: pass=True (9/9 checks); failed=none
+================================================================================
+ACC-2 — ARTIFACT-VS-FIGURES VERIFICATION
+================================================================================
+ACC-2: 58 values checked. PASS
+Class R reconciliation: 15 items written.
+================================================================================
+ASSERTION HARNESS
+================================================================================
+================================================================================
+FROZ-1 — SIDECAR vs FROZEN ARTIFACT, FIELD BY FIELD
+================================================================================
+  FROZ-1 PASS a0_feature_audit.json: 43 field(s), 0 divergences (declared: none permitted).
+  FROZ-1 PASS a1_close_wait.json: 11 field(s), 0 divergences (declared: none permitted).
+  FROZ-1 PASS a4_partition_summary.json: 22 field(s), 0 divergences (declared: none permitted).
+  FROZ-1 PASS a6_calibration_actions.csv: 48 field(s), 0 divergences (declared: none permitted).
+  FROZ-1 PASS a6_calibration_deciles.csv: 100 field(s), 0 divergences (declared: none permitted).
+  FROZ-1 PASS a6_relative_bias.csv: 50 field(s), 0 divergences (declared: none permitted).
+  FROZ-1 summary: 6/6 frozen artifact(s) diffed against their sidecars; 0 pre-declared field divergence(s); 0 undeclared; failures=none
+================================================================================
+LIT-1 — UNSOURCED NUMERIC LITERAL DETECTOR
+================================================================================
+Pre-Phase-3 snapshot scan: 200 unsourced, 0 Class R, 224 sourced, 165 allowlisted.
+  Fail-first evidence persisted: lit1_pre_phase3_scan.csv (589 rows)
+Probe tokens in the preserved original:
+  '2,129.37' -> unsourced  [GATE: must be unsourced]
+  '247,410.00' -> unsourced  [GATE: must be unsourced]
+  '133.2' -> unsourced  [GATE: must be unsourced]
+LIT-1 fail-first gate PASS: flagged ['133.2', '2,129.37', '247,410.00'] as unsourced in the preserved original.
+  Note: '133.2' classifies as UNSOURCED in the preserved original, which is correct: it is a Phase 2 rendering of 133.251, and '{:.1f}' renders that value as '133.3', so no FIGURES entry reproduces the snapshot's token. Both denominators are legitimate (133.3% of the wait->close subset gap, 166.5% of the total test deficit) and both are asserted by X4a/X4b. Informational.
+  Sample of unsourced tokens in the original (first 15):
+    L  12: '0.6223' — - Pairwise cross-action concordance on validation (OP-V) is **0.6223**
+    L  12: '0.6071' — - Pairwise cross-action concordance on validation (OP-V) is **0.6223**
+    L  12: '0.6376' — - Pairwise cross-action concordance on validation (OP-V) is **0.6223**
+    L  12: '3,879' — - Pairwise cross-action concordance on validation (OP-V) is **0.6223**
+    L  12: '15.68' — - Pairwise cross-action concordance on validation (OP-V) is **0.6223**
+    L  12: '15' — - Pairwise cross-action concordance on validation (OP-V) is **0.6223**
+    L  13: '0.6468' — - Value-weighted concordance is **0.6468**, proving that ranking quali
+    L  14: '23.1' — - Decision agreement with the Oracle (B6) is **23.1% for Policy A vs 1
+    L  14: '12.1' — - Decision agreement with the Oracle (B6) is **23.1% for Policy A vs 1
+    L  14: '44.4' — - Decision agreement with the Oracle (B6) is **23.1% for Policy A vs 1
+    L  14: '8.3' — - Decision agreement with the Oracle (B6) is **23.1% for Policy A vs 1
+    L  16: '156,669.06' — - Shrinkage sweep (P3, OP-V) with allowed-only P_bar targets shows net
+    L  18: '247,410' — 4. **The -₹247,410 `wait -> close` substitution in M5 reflects heavy-t
+    L  20: '133.2' — - Just **3 close-only recoveries** (Txn 1998, Txn 7703, Txn 196) accou
+    L  20: '247,410' — - Just **3 close-only recoveries** (Txn 1998, Txn 7703, Txn 196) accou
+LIT-1 injection control PASS (injected '314159.99' flagged=True).
+New report: 0 unsourced, 7 Class R, 176 sourced.
+LIT-1 result: PASS
+
+Final Assertion Summary:
+  [MECHANICAL   ] ACC-1     : PASS — Net=Gross-Cost for every policy row
+  [MECHANICAL   ] ACC-2     : PASS — Every FIGURES value matches its artifact on disk
+  [MECHANICAL   ] ORD-1     : PASS — Distinct orderings per pair is 1 or 2
+  [MECHANICAL   ] ORD-2     : PASS — A0 verdict is INTERACTIONS PRESENT
+  [MECHANICAL   ] P3-1      : PASS — lambda=1.0 reproduces live M4 baseline within 0.01 and 100% agreement
+  [MECHANICAL   ] P3-2      : PASS — lambda=0 simulated distribution matches independent derivation
+  [INFORMATIONAL] P3-3      : PASS — Every lambda row delta explained by Pbar denominator
+  [MECHANICAL   ] P5-1..5   : PASS — Five partition balance assertions on wait->close test txns
+  [MECHANICAL   ] SAME-1    : PASS — Same-action delta is zero
+  [MECHANICAL   ] ATTR-1    : PASS — Matrix residual < 0.01
+  [MECHANICAL   ] CAL-1     : PASS — Every calibration row has non-null SE and 95% CI
+  [MECHANICAL   ] XREF-1    : PASS — All cross-section identity checks pass (with negative control)
+  [MECHANICAL   ] FROZ-1    : PASS — Every recomputed sidecar matches its frozen original except where pre-declared
+  [MECHANICAL   ] CAL-2     : PASS — No significance claim attaches to CI-spanning-zero calibration row
+  [MECHANICAL   ] SPLIT-1   : PASS — Every markdown table declares split/data-op
+  [MECHANICAL   ] LIT-1     : PASS — New report has zero unsourced numeric tokens (detector proven to fire on the preserved original)
+
+MECHANICAL: 15/15 PASS.
+
+Written: ml\evaluation\m5_2_phase2_diagnostic.md
+
+BINDING AUDIT (all 12 names resolved):
+  a0_verdict = INTERACTIONS PRESENT
+  convention = C1
+  a1_artifact_keys = 11
+  derived_count = 204
+  derived_net_diff = -247409.56
+  agree_204 = True
+  net_diff_p3_1 = 0.0
+  agree_rate_p3_1 = 100.0
+  assertion_rows = 16
+  class_r_rows = 15
+  matrix_residual = 0.0
+  attr_1_pass = True
+================================================================================
+PHASE 3 COMPLETE
+  MECHANICAL assertions: 15/15
+  XREF-1: 9/9 checks passed; negative control fired
+  FIGURES: 203 entries
+  Class R items: 15
+  LIT-1: 0 unsourced token(s) in the new report
+  LIT-1 fail-first probes on preserved original: {'2,129.37': 'unsourced', '247,410.00': 'unsourced', '133.2': 'unsourced'}
+  M1-M5 untouched. ev_engine.py untouched. experiment_metrics.py untouched.
+  Test set NOT re-decided (OP-F read-only join only). M6 NOT run. No git operations.
+================================================================================
+================================================================================
+FINALIZE — PHASE 3 COMPLETE
+================================================================================
+Frozen artifacts: 0 of 13 changed. PASS.
+Non-frozen artifacts changed: 12
+  EXPECTED  a0_feature_audit.PHASE3.json: NEW -> f2f880b710e1...
+  EXPECTED  a1_close_wait.PHASE3.json: NEW -> 752cd8193306...
+  EXPECTED  a4_partition_summary.PHASE3.json: NEW -> a7507d3b474e...
+  EXPECTED  a6_calibration_actions.PHASE3.csv: NEW -> fef4b0dbdf19...
+  EXPECTED  a6_calibration_deciles.PHASE3.csv: NEW -> 1513e54b5b9c...
+  EXPECTED  a6_relative_bias.PHASE3.csv: NEW -> 006551be5bc7...
+  EXPECTED  a6_se_convention_probe.csv: NEW -> ffecd4b4547f...
+  EXPECTED  assertions.csv: 1a7ea997b556... -> da7db22acddb...
+  EXPECTED  class_r_reconciliation.csv: 3eca61c21b7f... -> 733ccf275d84...
+  EXPECTED  figures_registry.csv: 6bdd72c495ea... -> b7de9c098b13...
+  EXPECTED  froz1_divergences.csv: NEW -> b4703f9e98c8...
+  EXPECTED  lit1_pre_phase3_scan.csv: fccbe16ac487... -> a93186b9f3fa...
+Declared-but-unchanged (informational, not a failure): ['a2_convention.json', 'a5_attribution.csv', 'a5_substitution_matrix.csv', 'a8_carry_forward.json', 'run_log.txt']
+A8 field-level rule:
+  A8: 0 permitted change(s), 0 addition(s), 0 violations. PASS.
+Report hash transition (tracked, not frozen):
+  pre : 6b6f4e0aaf3de26020b78f014e283a6ee60f00761e4297d22026b612dc6d578c
+  post: c2bfd7f10510721bb0e622ed54ee468e52b1504991170259a7ff8236b2ca0ab8
+  CHANGED
+Immutable snapshot still present: True (sha256=6b6f4e0aaf3de26020b78f014e283a6ee60f00761e4297d22026b612dc6d578c)
+================================================================================
+EXITING WITH CODE 0
+================================================================================
