@@ -4,3 +4,7 @@ __pycache__/
 .env
 ml/audit/audit_trail.db
 *.db
+
+# Frontend build/dependency artifacts
+node_modules/
+dist/
