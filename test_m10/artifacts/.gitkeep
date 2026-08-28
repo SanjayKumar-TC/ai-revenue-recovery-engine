@@ -1,0 +1,3 @@
+# This directory holds JSON output from M10 test runs.
+# It is created automatically by the test scripts.
+# All files here are generated artifacts, not source.

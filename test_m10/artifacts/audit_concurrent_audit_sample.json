@@ -1,0 +1,622 @@
+[
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 10098.495599999296,
+    "body": {
+      "transaction_id": "m10-audit-seed-1-1787940301128142600",
+      "records": [
+        {
+          "trace_id": "5075c852-221c-4f80-8660-5288d7c675fd",
+          "timestamp": "2026-08-28T18:05:01.442170Z",
+          "transaction_id": "m10-audit-seed-1-1787940301128142600",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-1-1787940301128142600"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 10397.745399999621,
+    "body": {
+      "transaction_id": "m10-audit-seed-5-1787940301128142600",
+      "records": [
+        {
+          "trace_id": "c02e1d91-250c-4cfd-ab01-112485083006",
+          "timestamp": "2026-08-28T18:05:01.867703Z",
+          "transaction_id": "m10-audit-seed-5-1787940301128142600",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-5-1787940301128142600"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 10408.125500000097,
+    "body": {
+      "transaction_id": "m10-audit-seed-2-1787940301128142600",
+      "records": [
+        {
+          "trace_id": "8c94610c-e7ed-48a5-9ac0-7d45a35c1f30",
+          "timestamp": "2026-08-28T18:05:01.526313Z",
+          "transaction_id": "m10-audit-seed-2-1787940301128142600",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-2-1787940301128142600"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 10822.047800000291,
+    "body": {
+      "transaction_id": "m10-audit-seed-0-1787940301128142600",
+      "records": [
+        {
+          "trace_id": "0b2f0d0c-e32b-4c32-844a-18313938f405",
+          "timestamp": "2026-08-28T18:05:01.442841Z",
+          "transaction_id": "m10-audit-seed-0-1787940301128142600",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-0-1787940301128142600"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 11207.789900001444,
+    "body": {
+      "transaction_id": "m10-audit-seed-4-1787940301128142600",
+      "records": [
+        {
+          "trace_id": "06579c74-8b8a-4661-aa40-31881019e58c",
+          "timestamp": "2026-08-28T18:05:01.722322Z",
+          "transaction_id": "m10-audit-seed-4-1787940301128142600",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-4-1787940301128142600"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 11881.27329999952,
+    "body": {
+      "transaction_id": "m10-audit-seed-3-1787940301128142600",
+      "records": [
+        {
+          "trace_id": "74dd9416-247f-41b5-91ae-247eab28a631",
+          "timestamp": "2026-08-28T18:05:01.726444Z",
+          "transaction_id": "m10-audit-seed-3-1787940301128142600",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-3-1787940301128142600"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 11878.521500000716,
+    "body": {
+      "transaction_id": "m10-audit-seed-6-1787940301128142600",
+      "records": [
+        {
+          "trace_id": "145c98e2-60b2-4126-9f9b-e3183f042bac",
+          "timestamp": "2026-08-28T18:05:01.941366Z",
+          "transaction_id": "m10-audit-seed-6-1787940301128142600",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-6-1787940301128142600"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 12313.113300000623,
+    "body": {
+      "transaction_id": "m10-audit-seed-9-1787940301128142600",
+      "records": [
+        {
+          "trace_id": "764b3179-4167-4372-992a-066ca300baad",
+          "timestamp": "2026-08-28T18:05:02.277797Z",
+          "transaction_id": "m10-audit-seed-9-1787940301128142600",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-9-1787940301128142600"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 13140.967200000887,
+    "body": {
+      "transaction_id": "m10-audit-seed-7-1787940301128142600",
+      "records": [
+        {
+          "trace_id": "b3454bc7-13c0-4b1d-a018-1724833e9e28",
+          "timestamp": "2026-08-28T18:05:02.351403Z",
+          "transaction_id": "m10-audit-seed-7-1787940301128142600",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-7-1787940301128142600"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 13444.273999999496,
+    "body": {
+      "transaction_id": "m10-audit-seed-8-1787940301128142600",
+      "records": [
+        {
+          "trace_id": "c24f2b75-02a6-4b22-a9a6-d07f0428e698",
+          "timestamp": "2026-08-28T18:05:01.942534Z",
+          "transaction_id": "m10-audit-seed-8-1787940301128142600",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-8-1787940301128142600"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 13670.46609999852,
+    "body": {
+      "transaction_id": "m10-audit-seed-11-1787940301128142600",
+      "records": [
+        {
+          "trace_id": "4017956c-d74c-4b90-9020-92ac927527d2",
+          "timestamp": "2026-08-28T18:05:02.614732Z",
+          "transaction_id": "m10-audit-seed-11-1787940301128142600",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-11-1787940301128142600"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 13658.66459999961,
+    "body": {
+      "transaction_id": "m10-audit-seed-10-1787940301128142600",
+      "records": [
+        {
+          "trace_id": "823b27b1-4f6f-4a69-82a0-4a3e3062e00a",
+          "timestamp": "2026-08-28T18:05:02.594312Z",
+          "transaction_id": "m10-audit-seed-10-1787940301128142600",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-10-1787940301128142600"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 13656.870300001174,
+    "body": {
+      "transaction_id": "m10-audit-seed-12-1787940301132394100",
+      "records": [
+        {
+          "trace_id": "8649d4ff-b600-4568-831a-faeeb3339e4e",
+          "timestamp": "2026-08-28T18:05:02.746754Z",
+          "transaction_id": "m10-audit-seed-12-1787940301132394100",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-12-1787940301132394100"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 14291.358399999808,
+    "body": {
+      "transaction_id": "m10-audit-seed-14-1787940301132394100",
+      "records": [
+        {
+          "trace_id": "4c35c9f4-90d7-415e-ba44-36c47b8c7e74",
+          "timestamp": "2026-08-28T18:05:03.075170Z",
+          "transaction_id": "m10-audit-seed-14-1787940301132394100",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-14-1787940301132394100"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 4552.942399999665,
+    "body": {
+      "transaction_id": "m10-audit-seed-51-1787940301132394100",
+      "records": [
+        {
+          "trace_id": "d227fb90-d5cb-4eff-bc2e-4ed2a0572ac2",
+          "timestamp": "2026-08-28T18:05:08.019760Z",
+          "transaction_id": "m10-audit-seed-51-1787940301132394100",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-51-1787940301132394100"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 4714.505499998268,
+    "body": {
+      "transaction_id": "m10-audit-seed-53-1787940301132394100",
+      "records": [
+        {
+          "trace_id": "0e65cf06-b1e4-4bba-a756-ad61c773aa57",
+          "timestamp": "2026-08-28T18:05:07.989857Z",
+          "transaction_id": "m10-audit-seed-53-1787940301132394100",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-53-1787940301132394100"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 4732.153699998889,
+    "body": {
+      "transaction_id": "m10-audit-seed-61-1787940301132394100",
+      "records": [
+        {
+          "trace_id": "88f34a37-cf7e-4c3b-8ac5-2daac89126da",
+          "timestamp": "2026-08-28T18:05:09.289309Z",
+          "transaction_id": "m10-audit-seed-61-1787940301132394100",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-61-1787940301132394100"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 3927.3081999999704,
+    "body": {
+      "transaction_id": "m10-audit-seed-64-1787940301132394100",
+      "records": [
+        {
+          "trace_id": "6fa3dc1f-c150-4549-9bfe-006cce7d2d65",
+          "timestamp": "2026-08-28T18:05:09.477077Z",
+          "transaction_id": "m10-audit-seed-64-1787940301132394100",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-64-1787940301132394100"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 4329.425699999774,
+    "body": {
+      "transaction_id": "m10-audit-seed-63-1787940301132394100",
+      "records": [
+        {
+          "trace_id": "5e250070-14ec-4ea4-aad5-55bd4564a6f9",
+          "timestamp": "2026-08-28T18:05:09.264502Z",
+          "transaction_id": "m10-audit-seed-63-1787940301132394100",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-63-1787940301132394100"
+  },
+  {
+    "kind": "audit",
+    "status": 200,
+    "ms": 3583.5062000005564,
+    "body": {
+      "transaction_id": "m10-audit-seed-62-1787940301132394100",
+      "records": [
+        {
+          "trace_id": "ce39b4fe-ed54-45b5-869e-c4f9124b5cb3",
+          "timestamp": "2026-08-28T18:05:09.577766Z",
+          "transaction_id": "m10-audit-seed-62-1787940301132394100",
+          "selected_action": "discount",
+          "decision_type": "ev_optimization",
+          "decision_reason": "highest_expected_net_value",
+          "policy_version": "v1.0",
+          "model_version": "M2_logistic_regression",
+          "decision_engine_version": "v1.0",
+          "rules_fired": [],
+          "escalation_required": false,
+          "terminal": false,
+          "selected_ev": 512.7724614442475,
+          "selected_probability": 0.2848735896912486,
+          "m6_sendable": true,
+          "m6_channel": "email",
+          "m6_fallback_used": false
+        }
+      ]
+    },
+    "error": null,
+    "transaction_id": "m10-audit-seed-62-1787940301132394100"
+  }
+]

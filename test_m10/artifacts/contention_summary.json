@@ -1,0 +1,96 @@
+{
+  "db_path": "C:\\Users\\ADMIN\\Desktop\\recovery\\test_m10\\artifacts\\m10_contention_5w6h1_y0\\isolated.db",
+  "base_url": "http://127.0.0.1:62857",
+  "phase2": {
+    "writes_requested": 500,
+    "writes_completed": 500,
+    "reads_requested": 500,
+    "reads_completed": 500,
+    "elapsed_seconds": 64.66611552238464,
+    "write_breakdown": {
+      "by_status": {
+        "200": 500
+      },
+      "4xx": {},
+      "5xx": 0,
+      "transport_errors": 0,
+      "success_200": 500
+    },
+    "read_breakdown": {
+      "by_status": {
+        "200": 500
+      },
+      "4xx": {},
+      "5xx": 0,
+      "transport_errors": 0,
+      "success_200": 500
+    },
+    "write_latency_ms": {
+      "p50": 5679.13899999985,
+      "p95": 11489.968500000032,
+      "p99": 13561.354599998594
+    },
+    "read_latency_ms": {
+      "p50": 3268.050399999993,
+      "p95": 18616.643499999554,
+      "p99": 20040.98030000023
+    },
+    "contention": {
+      "sqlite_locked_decide": 0,
+      "sqlite_locked_audit": 0,
+      "decide_5xx_count": 0,
+      "decide_5xx_detail": [],
+      "null_trace_id_on_200_count": 67,
+      "null_trace_contract_violations": [],
+      "audit_sample_checked": 50,
+      "audit_sample_found": 50,
+      "audit_sample_missing": 0
+    }
+  },
+  "phase3_heavy_burst": {
+    "writes_requested": 1000,
+    "writes_completed": 987,
+    "reads_requested": 1000,
+    "reads_completed": 1000,
+    "elapsed_seconds": 125.58091759681702,
+    "write_breakdown": {
+      "by_status": {
+        "200": 987
+      },
+      "4xx": {},
+      "5xx": 0,
+      "transport_errors": 0,
+      "success_200": 987
+    },
+    "read_breakdown": {
+      "by_status": {
+        "200": 1000
+      },
+      "4xx": {},
+      "5xx": 0,
+      "transport_errors": 0,
+      "success_200": 1000
+    },
+    "write_latency_ms": {
+      "p50": 11029.35669999897,
+      "p95": 17998.75290000091,
+      "p99": 33426.67959999926
+    },
+    "read_latency_ms": {
+      "p50": 8727.222400000755,
+      "p95": 11051.343999999517,
+      "p99": 18318.7412999996
+    },
+    "contention": {
+      "sqlite_locked_decide": 0,
+      "sqlite_locked_audit": 0,
+      "decide_5xx_count": 0,
+      "decide_5xx_detail": [],
+      "null_trace_id_on_200_count": 245,
+      "null_trace_contract_violations": [],
+      "audit_sample_checked": 50,
+      "audit_sample_found": 50,
+      "audit_sample_missing": 0
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "tests": {
+    "1_model_unavailable": {
+      "scenario": "model_unavailable",
+      "baseline": {
+        "status": 200,
+        "has_decision": true
+      },
+      "unknown_failure_type": {
+        "status": 400,
+        "expected_400": true,
+        "body_snippet": "{'detail': 'Unknown failure_type'}",
+        "has_traceback": false
+      }
+    },
+    "2_m7_write_failure": {
+      "scenario": "m7_write_failure",
+      "phase_a_normal": {
+        "status": 200,
+        "trace_id": "3501d7ab-0458-4b21-a368-9d40a451f8ed",
+        "trace_id_not_null": true
+      },
+      "phase_b_fault": {
+        "requests": 5,
+        "details": [
+          {
+            "status": 200,
+            "trace_id": null,
+            "has_selected_action": true,
+            "has_decision_fields": true
+          },
+          {
+            "status": 200,
+            "trace_id": null,
+            "has_selected_action": true,
+            "has_decision_fields": true
+          },
+          {
+            "status": 200,
+            "trace_id": null,
+            "has_selected_action": true,
+            "has_decision_fields": true
+          },
+          {
+            "status": 200,
+            "trace_id": null,
+            "has_selected_action": true,
+            "has_decision_fields": true
+          },
+          {
+            "status": 200,
+            "trace_id": null,
+            "has_selected_action": true,
+            "has_decision_fields": true
+          }
+        ],
+        "all_http_200": true,
+        "all_have_decision_fields": true,
+        "any_null_trace_id": true,
+        "m8_contract_holds": true
+      }
+    },
+    "3_m7_missing_db": {
+      "scenario": "m7_missing_db_dir",
+      "result": {
+        "status": 200,
+        "trace_id": "96d1de2e-960e-4305-85b0-0907fcac1635",
+        "has_selected_action": true,
+        "db_was_created": true
+      }
+    },
+    "4_m6_fallback": {
+      "scenario": "m6_fallback_triggers",
+      "cases": [
+        {
+          "case": "no_communication_channel",
+          "status": 200,
+          "communication": {
+            "sendable": true,
+            "channel": "email",
+            "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-7b7362ee-bc9b-4a7b-933f-06f7ca81bd59 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+            "fallback_used": false
+          },
+          "fallback_used": false
+        },
+        {
+          "case": "channel_none",
+          "status": 200,
+          "communication": {
+            "sendable": true,
+            "channel": "none",
+            "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-25f67a98-4b69-43eb-b866-7f835a7c70ab (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+            "fallback_used": false
+          },
+          "fallback_used": false
+        },
+        {
+          "case": "no_payment_link_url",
+          "status": 200,
+          "communication": {
+            "sendable": true,
+            "channel": "email",
+            "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-eb0d2c84-6cf6-4ef2-8670-3f5ffa517230 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+            "fallback_used": false
+          },
+          "fallback_used": false
+        },
+        {
+          "case": "no_customer_name",
+          "status": 200,
+          "communication": {
+            "sendable": true,
+            "channel": "email",
+            "message_body": "Dear Customer,\n\nGood news! We have approved a special 10% discount on your transaction #m10-ca700921-9d2c-4351-a611-f16c7f5865f5 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+            "fallback_used": false
+          },
+          "sendable": true
+        },
+        {
+          "case": "high_risk_policy_block",
+          "status": 200,
+          "selected_action": "wait",
+          "decision_type": "ev_optimization",
+          "communication": {
+            "sendable": false,
+            "channel": null,
+            "message_body": null,
+            "fallback_used": false
+          },
+          "sendable": false
+        },
+        {
+          "case": "already_recovered",
+          "status": 200,
+          "selected_action": "no_action_required",
+          "terminal": true,
+          "communication": {
+            "sendable": false,
+            "channel": null,
+            "message_body": null,
+            "fallback_used": false
+          },
+          "sendable": false
+        }
+      ]
+    },
+    "5_heavy_load": {
+      "scenario": "heavy_load_degradation",
+      "result": {
+        "total": 100,
+        "http_200": 100,
+        "http_5xx": 0,
+        "transport_errors": 0,
+        "distinct_actions": [
+          "discount"
+        ],
+        "integrity_issues_count": 0,
+        "integrity_issues_sample": [],
+        "latency_ms": {
+          "p50": 8658.734800001184,
+          "p95": 12047.579699999915,
+          "p99": 12307.951500000854
+        }
+      }
+    }
+  }
+}

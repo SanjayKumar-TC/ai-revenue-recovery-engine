@@ -1,0 +1,56 @@
+{
+  "db_path": "C:\\Users\\ADMIN\\Desktop\\recovery\\test_m10\\artifacts\\m10_audit_xfp05pfy\\isolated.db",
+  "base_url": "http://127.0.0.1:62664",
+  "seed": {
+    "requested": 200,
+    "seeded_ok": 200
+  },
+  "concurrent_decide": {
+    "requested": 2000,
+    "completed": 902,
+    "workers": 50,
+    "elapsed_seconds": 122.8115816116333,
+    "breakdown": {
+      "by_status": {
+        "200": 902
+      },
+      "4xx": {},
+      "5xx": 0,
+      "transport_errors": 0,
+      "success_200": 902
+    },
+    "latency_ms": {
+      "p50": 5813.9234999998735,
+      "p95": 11650.38149999964,
+      "p99": 15166.647800000646
+    },
+    "integrity_problems": {}
+  },
+  "concurrent_audit": {
+    "requested": 1000,
+    "completed": 1000,
+    "workers": 50,
+    "elapsed_seconds": 122.8115816116333,
+    "breakdown": {
+      "by_status": {
+        "200": 965,
+        "404": 35
+      },
+      "4xx": {
+        "404": 35
+      },
+      "5xx": 0,
+      "transport_errors": 0,
+      "success_200": 965
+    },
+    "latency_ms": {
+      "p50": 3738.5009999998147,
+      "p95": 6999.462599998878,
+      "p99": 20746.39980000029
+    },
+    "shape_problems": {},
+    "cross_transaction_leakage": 0,
+    "ordering_checked": 0,
+    "ordering_violations": 0
+  }
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 3537.212200000795,
+    "body": {
+      "transaction_id": "m10-audit-mod-3-1787940327059233300",
+      "trace_id": "496dd27f-62dc-4399-97eb-d39f102ec6b8",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-3-1787940327059233300 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-3-1787940327059233300"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 3557.556300000215,
+    "body": {
+      "transaction_id": "m10-audit-mod-0-1787940327059233300",
+      "trace_id": "77c4f4af-2715-4167-8845-aa3ada213094",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-0-1787940327059233300 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-0-1787940327059233300"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 3520.575500000632,
+    "body": {
+      "transaction_id": "m10-audit-mod-13-1787940327060232700",
+      "trace_id": "cfd77936-d332-4457-ad4b-fb404cb929e9",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-13-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-13-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 3556.253700000525,
+    "body": {
+      "transaction_id": "m10-audit-mod-1-1787940327059233300",
+      "trace_id": "c8387285-6d7b-4979-a08b-62e19533e030",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-1-1787940327059233300 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-1-1787940327059233300"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 3611.549899998863,
+    "body": {
+      "transaction_id": "m10-audit-mod-16-1787940327060232700",
+      "trace_id": "979389eb-42d9-4cb9-8b9c-3efa901f6cc9",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-16-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-16-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 3963.644999999815,
+    "body": {
+      "transaction_id": "m10-audit-mod-11-1787940327060232700",
+      "trace_id": "8951d5f6-a8ea-43a8-8768-f6f7c7827af4",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-11-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-11-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 4003.7354999985837,
+    "body": {
+      "transaction_id": "m10-audit-mod-10-1787940327060232700",
+      "trace_id": "eee65919-2137-4414-baa1-ef95281d8052",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-10-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-10-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 4038.237899998421,
+    "body": {
+      "transaction_id": "m10-audit-mod-4-1787940327059233300",
+      "trace_id": "67a54213-fc97-45da-aae6-e717ee696fe5",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-4-1787940327059233300 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-4-1787940327059233300"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 4078.987099999722,
+    "body": {
+      "transaction_id": "m10-audit-mod-7-1787940327060232700",
+      "trace_id": "96b42241-1367-4121-8558-3de5f59cf83d",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-7-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-7-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 4082.44569999988,
+    "body": {
+      "transaction_id": "m10-audit-mod-12-1787940327060232700",
+      "trace_id": "0ca410e1-be8f-4f78-bda3-7b13bd8e2afb",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-12-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-12-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 4068.1049000013445,
+    "body": {
+      "transaction_id": "m10-audit-mod-17-1787940327060232700",
+      "trace_id": "5408a86e-ef0a-425b-b8b9-528bf4a15e69",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-17-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-17-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 4072.6997000001575,
+    "body": {
+      "transaction_id": "m10-audit-mod-18-1787940327060232700",
+      "trace_id": "8f9511b0-af9e-4362-a039-341b499f51f0",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-18-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-18-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 4252.694499999052,
+    "body": {
+      "transaction_id": "m10-audit-mod-8-1787940327060232700",
+      "trace_id": "6ab9ba8f-748f-4a41-9199-1a762e9e06f4",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-8-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-8-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 4338.714400000754,
+    "body": {
+      "transaction_id": "m10-audit-mod-21-1787940327060232700",
+      "trace_id": "ecd8ca94-a9fd-46c2-bfbf-fbde314a3d70",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-21-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-21-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 4421.8361000002915,
+    "body": {
+      "transaction_id": "m10-audit-mod-5-1787940327059233300",
+      "trace_id": "20fab14f-1cc3-4dac-99d8-273002f3e612",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-5-1787940327059233300 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-5-1787940327059233300"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 4391.928499999267,
+    "body": {
+      "transaction_id": "m10-audit-mod-19-1787940327060232700",
+      "trace_id": "407a0ad7-b22c-4bea-b078-12060a8b66ab",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-19-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-19-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 6448.624599999675,
+    "body": {
+      "transaction_id": "m10-audit-mod-26-1787940327060232700",
+      "trace_id": "f92078be-054c-40bf-b0fb-5f597bf1ce6a",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-26-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-26-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 6454.69249999951,
+    "body": {
+      "transaction_id": "m10-audit-mod-25-1787940327060232700",
+      "trace_id": "1a75b72b-f64d-4c2f-b64d-11954cdded6a",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-25-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-25-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 6470.821799999612,
+    "body": {
+      "transaction_id": "m10-audit-mod-23-1787940327060232700",
+      "trace_id": "1e27a096-e016-47ee-958e-770572f80e1d",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-23-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-23-1787940327060232700"
+  },
+  {
+    "kind": "decide",
+    "status": 200,
+    "ms": 6538.571000000957,
+    "body": {
+      "transaction_id": "m10-audit-mod-14-1787940327060232700",
+      "trace_id": "92042a24-3ff0-40d9-baf0-420eeccb4ff6",
+      "selected_action": "discount",
+      "decision_type": "ev_optimization",
+      "decision_reason": "highest_expected_net_value",
+      "escalation_required": false,
+      "terminal": false,
+      "selected_ev": 512.7724614442475,
+      "selected_probability": 0.2848735896912486,
+      "policy_version": "v1.0",
+      "communication": {
+        "sendable": true,
+        "channel": "email",
+        "message_body": "Dear M10 Load,\n\nGood news! We have approved a special 10% discount on your transaction #m10-audit-mod-14-1787940327060232700 (originally \u20b92,000.00). You now only need to pay \u20b91,800.00 to complete your order.",
+        "fallback_used": false
+      }
+    },
+    "error": null,
+    "transaction_id": "m10-audit-mod-14-1787940327060232700"
+  }
+]

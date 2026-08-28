@@ -1,0 +1,620 @@
+{
+  "db_path": "C:\\Users\\ADMIN\\Desktop\\recovery\\test_m10\\artifacts\\m10_boundary_0_qs8hug\\isolated.db",
+  "base_url": "http://127.0.0.1:62036",
+  "decide_boundary": [
+    {
+      "case": "amount_zero",
+      "description": "amount=0",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 226.78410000116855,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-547b7749-42ab-4778-8b8e-9aafd551e954', 'trace_id': '7d660dc3-ad87-4a91-8eb5-c0e6546e0ff1', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value_tiebreak', 'escalation_required': False, 'terminal': False, 'selected_ev': 0.0, 'selected_probability': 0.7639852807280529, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have approved a ",
+      "error": null
+    },
+    {
+      "case": "amount_negative",
+      "description": "negative amount",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 22.737299999789684,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-fc179928-d7c5-474b-be46-a18b198fbcfe', 'trace_id': '0a2e5d19-6f15-4b95-bb6f-56fe2e5e8c06', 'selected_action': 'escalate', 'decision_type': 'terminal_forced_action', 'decision_reason': 'single_permitted_action', 'escalation_required': True, 'terminal': True, 'selected_ev': -0.0, 'selected_probability': None, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "amount_1e12",
+      "description": "very large amount (1 trillion)",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 45.63899999993737,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-29a191f4-fac9-4457-b40f-f70a6fbccad7', 'trace_id': '8eb30678-dee8-4f05-97aa-842ad5e9d47d', 'selected_action': 'wait', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': True, 'terminal': False, 'selected_ev': 624499661.8626429, 'selected_probability': 0.0006244996618626429, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "amount_subcent",
+      "description": "sub-cent precision",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 108.03479999958654,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-b0c823be-ef75-4cef-a13e-d6999e16a322', 'trace_id': '1570147f-0740-41df-9214-0c8d4d400b9d', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 0.0006875420446239407, 'selected_probability': 0.7639356051377119, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have ap",
+      "error": null
+    },
+    {
+      "case": "amount_float_max",
+      "description": "near float max",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 49.31629999919096,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-f1d2176e-1e17-458b-8bf6-b13810f2ef0e', 'trace_id': 'f0ce5c20-fe22-49ea-9040-a6d7da8bba9d', 'selected_action': 'wait', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': True, 'terminal': False, 'selected_ev': 1.6348061558194e+223, 'selected_probability': 1.6348061558194001e-85, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "attempt_zero",
+      "description": "attempt_number=0",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 17.862299999251263,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-17ca09d0-4ed2-4327-afff-9b1ef2244ad8', 'trace_id': 'd366441b-02d6-45a0-9125-5a1132848705', 'selected_action': 'escalate', 'decision_type': 'terminal_forced_action', 'decision_reason': 'single_permitted_action', 'escalation_required': True, 'terminal': True, 'selected_ev': 0.0, 'selected_probability': None, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "attempt_negative",
+      "description": "negative attempt_number",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 21.825699999681092,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-86281c7f-5518-4eba-bc9c-ddf9a02fda68', 'trace_id': 'ccfe23b9-69e4-4a56-8eb1-5f4f87a7b46f', 'selected_action': 'escalate', 'decision_type': 'terminal_forced_action', 'decision_reason': 'single_permitted_action', 'escalation_required': True, 'terminal': True, 'selected_ev': 0.0, 'selected_probability': None, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "attempt_very_large",
+      "description": "very large attempt_number",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 80.64480000030017,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-ec2bd6f1-a70a-4831-bbd6-dd199f097d41', 'trace_id': '0762024b-1d84-45a6-aa37-01c59f74ebfa', 'selected_action': 'wait', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value_tiebreak', 'escalation_required': False, 'terminal': False, 'selected_ev': 0.0, 'selected_probability': 0.0, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "risk_below_range",
+      "description": "risk_score below 0",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 17.41509999919799,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-1806b364-ea5f-46ad-87ed-0e9e8bfe258b', 'trace_id': '6c7753bd-1a69-4a88-932b-e8614510f9b9', 'selected_action': 'escalate', 'decision_type': 'terminal_forced_action', 'decision_reason': 'single_permitted_action', 'escalation_required': True, 'terminal': True, 'selected_ev': 0.0, 'selected_probability': None, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "risk_above_range",
+      "description": "risk_score above 1",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 22.78409999962605,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-4d41f3cc-7abd-4ff6-8d4d-07aaafd9556b', 'trace_id': '75673a91-0f80-4b30-9733-1491cab4d8e6', 'selected_action': 'escalate', 'decision_type': 'terminal_forced_action', 'decision_reason': 'single_permitted_action', 'escalation_required': True, 'terminal': True, 'selected_ev': 0.0, 'selected_probability': None, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "risk_exactly_zero",
+      "description": "risk_score=0.0 (boundary)",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 102.36140000051819,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-85d3fd32-8ae1-4e2e-9856-4e9e2c21ba6e', 'trace_id': '0f8aae98-2a2e-476f-a15d-3af8a11e70bb', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 580.4378025868591, 'selected_probability': 0.3224654458815884, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have approv",
+      "error": null
+    },
+    {
+      "case": "risk_exactly_one",
+      "description": "risk_score=1.0 (boundary)",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 36.48170000087703,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-30734ce3-3298-4eb8-ba9b-63f7afcff59f', 'trace_id': '307aa42a-d225-4180-b8d3-bedcfd09b0e0', 'selected_action': 'wait', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': True, 'terminal': False, 'selected_ev': 107.73752809668669, 'selected_probability': 0.05386876404834334, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "risk_large",
+      "description": "risk_score=100",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 21.043199998530326,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-65529b88-a36e-4c93-957a-9565e8033fef', 'trace_id': '9aace0ac-91df-4314-a820-81b5ccb2c233', 'selected_action': 'escalate', 'decision_type': 'terminal_forced_action', 'decision_reason': 'single_permitted_action', 'escalation_required': True, 'terminal': True, 'selected_ev': 0.0, 'selected_probability': None, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "fatigue_negative",
+      "description": "negative contact_fatigue",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 20.745599998917896,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-41968aa5-e5b0-48fd-9c05-0c1cdf52b96f', 'trace_id': 'd52c81c7-2136-4dcb-bbfd-1ad1255c069a', 'selected_action': 'escalate', 'decision_type': 'terminal_forced_action', 'decision_reason': 'single_permitted_action', 'escalation_required': True, 'terminal': True, 'selected_ev': 0.0, 'selected_probability': None, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "fatigue_huge",
+      "description": "huge contact_fatigue",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 22.419799999624956,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-0344db47-71c8-4085-a3da-8066b7b0af0d', 'trace_id': 'a33a00ef-007a-41cb-9f96-0d7db20fd5e9', 'selected_action': 'escalate', 'decision_type': 'terminal_forced_action', 'decision_reason': 'single_permitted_action', 'escalation_required': True, 'terminal': True, 'selected_ev': 0.0, 'selected_probability': None, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "hours_negative",
+      "description": "negative hours_since_failure",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 23.068200000125216,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-40f86141-a73f-4bf2-9c0c-984084a54251', 'trace_id': '01d1863e-6caa-4413-97f0-1a5c879ad04d', 'selected_action': 'escalate', 'decision_type': 'terminal_forced_action', 'decision_reason': 'single_permitted_action', 'escalation_required': True, 'terminal': True, 'selected_ev': 0.0, 'selected_probability': None, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "hours_zero",
+      "description": "hours_since_failure=0",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 95.60840000085591,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-47efe034-cfd3-4d91-a579-68a19ce5ddcd', 'trace_id': '038f66d2-8d0f-4536-b105-a8024864cc80', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have approv",
+      "error": null
+    },
+    {
+      "case": "hours_huge",
+      "description": "huge hours_since_failure",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 27.896999999939,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-74c9e50c-96c9-49df-ae22-bff8ee7a13b0', 'trace_id': '64495536-7363-420a-a3cc-ec9c2bba08a8', 'selected_action': 'close', 'decision_type': 'terminal_forced_action', 'decision_reason': 'terminal_recovery_window_expired', 'escalation_required': False, 'terminal': True, 'selected_ev': 0.0, 'selected_probability': None, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "discount_negative",
+      "description": "negative discount",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 118.33479999950214,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-35b32168-69b6-48d0-9f9f-b519ed837026', 'trace_id': '9d96b489-19fb-4bf5-9357-9f89763ab828', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 598.2345383516221, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': 'none', 'message_body': 'Approved customer context validation failed",
+      "error": null
+    },
+    {
+      "case": "discount_over_100",
+      "description": "discount > 100%",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 75.92050000130257,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-97387504-bcd5-485f-ae46-fe46431d7a0e', 'trace_id': '652f5e06-ccaa-48a1-9e0c-c0f2c869b705', 'selected_action': 'retry', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 408.6660220743542, 'selected_probability': 0.2053330110371771, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nWe noticed a temporary issue",
+      "error": null
+    },
+    {
+      "case": "discount_fractional",
+      "description": "fractional discount",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 92.41959999963001,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-ee03b5cc-52ae-4aee-a3bf-cd13daf8855d', 'trace_id': '06668bed-c9a0-4ab8-8bab-8e2b93f88ec5', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 525.4379412419204, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have appro",
+      "error": null
+    },
+    {
+      "case": "segment_uppercase",
+      "description": "uppercase segment",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 5.5518000008305535,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'literal_error', 'loc': ['body', 'customer_segment'], 'msg': \"Input should be 'b2c_new', 'b2c_returning' or 'b2b'\", 'input': 'B2C_NEW', 'ctx': {'expected': \"'b2c_new', 'b2c_returning' or 'b2b'\"}}]}",
+      "error": null
+    },
+    {
+      "case": "segment_whitespace",
+      "description": "whitespace-padded segment",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 3.7379000004875707,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'literal_error', 'loc': ['body', 'customer_segment'], 'msg': \"Input should be 'b2c_new', 'b2c_returning' or 'b2b'\", 'input': ' b2c_new ', 'ctx': {'expected': \"'b2c_new', 'b2c_returning' or 'b2b'\"}}]}",
+      "error": null
+    },
+    {
+      "case": "segment_mixed_case",
+      "description": "mixed case segment",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 3.5124000005453127,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'literal_error', 'loc': ['body', 'customer_segment'], 'msg': \"Input should be 'b2c_new', 'b2c_returning' or 'b2b'\", 'input': 'B2c_Returning', 'ctx': {'expected': \"'b2c_new', 'b2c_returning' or 'b2b'\"}}]}",
+      "error": null
+    },
+    {
+      "case": "segment_invalid",
+      "description": "invalid segment value",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 3.2969999992928933,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'literal_error', 'loc': ['body', 'customer_segment'], 'msg': \"Input should be 'b2c_new', 'b2c_returning' or 'b2b'\", 'input': 'enterprise', 'ctx': {'expected': \"'b2c_new', 'b2c_returning' or 'b2b'\"}}]}",
+      "error": null
+    },
+    {
+      "case": "txn_empty",
+      "description": "empty transaction_id",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 111.00839999926393,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': '', 'trace_id': '0820b365-a4f3-4f6c-927f-1d0c6e9de7da', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have approved a special 10% discount on your transa",
+      "error": null
+    },
+    {
+      "case": "txn_10k_chars",
+      "description": "10,000+ char transaction_id",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 97.0603999994637,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "error": null
+    },
+    {
+      "case": "txn_unicode",
+      "description": "unicode transaction_id",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 85.54619999995339,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': '\u4ea4\u6613-\ud83d\udd25-\u0442\u0435\u0441\u0442', 'trace_id': 'f38b1a42-19ed-47f7-96f3-594406324100', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have approved a special 10% discount on yo",
+      "error": null
+    },
+    {
+      "case": "txn_sql_injection",
+      "description": "SQL-like transaction_id",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 75.0121000000945,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': \"'; DROP TABLE decisions;--\", 'trace_id': '534dc6b5-02b7-40d8-9bee-c28e113b268f', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': \"Dear M10 Load,\\n\\nGood news! We have approved a special 1",
+      "error": null
+    },
+    {
+      "case": "txn_path_separators",
+      "description": "path separator transaction_id",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 82.01889999872947,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': '../../etc/passwd', 'trace_id': '9c33d4bf-d7f9-4bd1-ac4c-2841a32ea6d4', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have approved a special 10% discoun",
+      "error": null
+    },
+    {
+      "case": "txn_null_bytes",
+      "description": "null byte in transaction_id",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 86.31480000076408,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'test\\x00null', 'trace_id': '27c39c8e-6f0b-4e6a-8bff-e37005d1d2b2', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have approved a special 10% discount on",
+      "error": null
+    },
+    {
+      "case": "name_huge",
+      "description": "huge customer_name",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 162.91160000037053,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-7bcde67e-16f0-46f6-9ca9-8ef1f3f8b975', 'trace_id': 'c7071b2c-219b-45de-92b1-f89277dd8667', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "error": null
+    },
+    {
+      "case": "name_unicode",
+      "description": "unicode customer_name",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 76.37479999903007,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-a329fcdb-e094-4368-89c0-225f75cbc7dc', 'trace_id': 'df127a5b-da87-4f18-be09-098b5352eda9', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear \u0633\u0644\u0627\u0645 \u0639\u0627\u0644\u06cc\u06a9\u0645 \ud83c\udf89 \u00d1o\u00f1o,\\n\\nGood news! We h",
+      "error": null
+    },
+    {
+      "case": "name_null",
+      "description": "null customer_name",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 88.5641000004398,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-f41c5469-9ead-4e19-a7a6-8e602dbdeb97', 'trace_id': '25fd6d34-7506-4391-b43c-893fe4614783', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear Customer,\\n\\nGood news! We have approv",
+      "error": null
+    },
+    {
+      "case": "name_empty",
+      "description": "empty string customer_name",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 80.70090000001073,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-3afc1be4-cd66-446a-9684-eb7fb7d03e63', 'trace_id': '005aa6ed-7877-4bda-a063-4074bac9f4f1', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear Customer,\\n\\nGood news! We have approv",
+      "error": null
+    },
+    {
+      "case": "url_malformed",
+      "description": "malformed URL",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 81.58689999982016,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-9176996c-cd37-4570-a95d-2ee8d55da6d5', 'trace_id': '4b60e1d8-b200-4344-b9e5-28676ed6a235', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have approv",
+      "error": null
+    },
+    {
+      "case": "url_non_url",
+      "description": "non-HTTP URL",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 100.00030000082916,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-66eefb45-b605-485f-a5e5-b47a8d431dad', 'trace_id': '482dee8a-7050-4d34-a39e-ab7e98f4757c', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have approv",
+      "error": null
+    },
+    {
+      "case": "url_huge",
+      "description": "huge URL",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 101.24999999970896,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-143490ac-dfe2-4df0-b4c1-3ba77ed38d5d', 'trace_id': '7feb0690-4593-4385-bd0a-4fc07596116d', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have approv",
+      "error": null
+    },
+    {
+      "case": "url_javascript",
+      "description": "javascript: URL",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 78.58479999958945,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-5479ee99-a19a-47a1-9dbb-4eb8c811a4f7', 'trace_id': '40b6a1a4-54bd-40f7-98be-ceae5ef9576f', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selected_probability': 0.2848735896912486, 'policy_version': 'v1.0', 'communication': {'sendable': True, 'channel': 'email', 'message_body': 'Dear M10 Load,\\n\\nGood news! We have approv",
+      "error": null
+    },
+    {
+      "case": "channel_invalid",
+      "description": "invalid channel",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 2.953200000774814,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'literal_error', 'loc': ['body', 'communication_channel'], 'msg': \"Input should be 'email', 'sms', 'whatsapp' or 'none'\", 'input': 'telegram', 'ctx': {'expected': \"'email', 'sms', 'whatsapp' or 'none'\"}}]}",
+      "error": null
+    },
+    {
+      "case": "channel_uppercase",
+      "description": "uppercase channel",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 2.543500000683707,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'literal_error', 'loc': ['body', 'communication_channel'], 'msg': \"Input should be 'email', 'sms', 'whatsapp' or 'none'\", 'input': 'EMAIL', 'ctx': {'expected': \"'email', 'sms', 'whatsapp' or 'none'\"}}]}",
+      "error": null
+    },
+    {
+      "case": "channel_empty",
+      "description": "empty channel",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 3.5152000000380212,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'literal_error', 'loc': ['body', 'communication_channel'], 'msg': \"Input should be 'email', 'sms', 'whatsapp' or 'none'\", 'input': '', 'ctx': {'expected': \"'email', 'sms', 'whatsapp' or 'none'\"}}]}",
+      "error": null
+    }
+  ],
+  "type_abuse": [
+    {
+      "case": "amount_string",
+      "description": "amount as string",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 4.5172999998612795,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'float_parsing', 'loc': ['body', 'amount'], 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'not_a_number'}]}",
+      "error": null
+    },
+    {
+      "case": "attempt_float",
+      "description": "attempt_number as float",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 4.289999998945859,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'int_from_float', 'loc': ['body', 'attempt_number'], 'msg': 'Input should be a valid integer, got a number with a fractional part', 'input': 1.5}]}",
+      "error": null
+    },
+    {
+      "case": "attempt_string",
+      "description": "attempt_number as string",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 2.937999999630847,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'int_parsing', 'loc': ['body', 'attempt_number'], 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'abc'}]}",
+      "error": null
+    },
+    {
+      "case": "risk_string",
+      "description": "risk_score as string",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 4.418500000610948,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'float_parsing', 'loc': ['body', 'risk_score'], 'msg': 'Input should be a valid number, unable to parse string as a number', 'input': 'high'}]}",
+      "error": null
+    },
+    {
+      "case": "already_recovered_string",
+      "description": "bool as string",
+      "status": 200,
+      "classification": "expected_accept",
+      "ms": 19.925500000681495,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'm10-84f5a5bc-c445-4ea6-9cbb-9f87737e1a16', 'trace_id': '5d6ecf56-bf5c-4af9-abf6-b0aad09f122e', 'selected_action': 'no_action_required', 'decision_type': 'terminal_no_action', 'decision_reason': 'already_recovered_terminal', 'escalation_required': False, 'terminal': True, 'selected_ev': None, 'selected_probability': None, 'policy_version': 'v1.0', 'communication': {'sendable': False, 'channel': None, 'message_body': None, 'fallback_used': False}}",
+      "error": null
+    },
+    {
+      "case": "missing_amount",
+      "description": "missing required field: amount",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 4.874500000369153,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'missing', 'loc': ['body', 'amount'], 'msg': 'Field required', 'input': {'transaction_id': 'm10-389532da-81f7-4473-a9a0-4065a6dc71ca', 'failure_type': 'temporary_bank_decline', 'attempt_number': 1, 'risk_score': 0.15, 'contact_fatigue': 0.1, 'hours_since_failure': 6.0, 'current_discount_percent': 10.0, 'customer_segment': 'b2c_new', 'already_recovered': False, 'customer_name': 'M10 Load', 'communication_channel': 'email', 'payment_link_url': 'https://checkout.example.com/pay",
+      "error": null
+    },
+    {
+      "case": "missing_failure_type",
+      "description": "missing required field: failure_type",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 2.68320000031963,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'missing', 'loc': ['body', 'failure_type'], 'msg': 'Field required', 'input': {'transaction_id': 'm10-fd67292d-e6a9-4021-8288-5f0774d857df', 'amount': 2000.0, 'attempt_number': 1, 'risk_score': 0.15, 'contact_fatigue': 0.1, 'hours_since_failure': 6.0, 'current_discount_percent': 10.0, 'customer_segment': 'b2c_new', 'already_recovered': False, 'customer_name': 'M10 Load', 'communication_channel': 'email', 'payment_link_url': 'https://checkout.example.com/pay/m10'}}]}",
+      "error": null
+    },
+    {
+      "case": "missing_transaction_id",
+      "description": "missing required field: transaction_id",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 2.553799999077455,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'missing', 'loc': ['body', 'transaction_id'], 'msg': 'Field required', 'input': {'failure_type': 'temporary_bank_decline', 'amount': 2000.0, 'attempt_number': 1, 'risk_score': 0.15, 'contact_fatigue': 0.1, 'hours_since_failure': 6.0, 'current_discount_percent': 10.0, 'customer_segment': 'b2c_new', 'already_recovered': False, 'customer_name': 'M10 Load', 'communication_channel': 'email', 'payment_link_url': 'https://checkout.example.com/pay/m10'}}]}",
+      "error": null
+    },
+    {
+      "case": "extra_field",
+      "description": "extra field (forbidden by schema)",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 5.436700001155259,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'extra_forbidden', 'loc': ['body', 'extra_malicious'], 'msg': 'Extra inputs are not permitted', 'input': 'data'}]}",
+      "error": null
+    },
+    {
+      "case": "empty_body",
+      "description": "empty JSON body",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 4.64060000012978,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'missing', 'loc': ['body', 'transaction_id'], 'msg': 'Field required', 'input': {}}, {'type': 'missing', 'loc': ['body', 'failure_type'], 'msg': 'Field required', 'input': {}}, {'type': 'missing', 'loc': ['body', 'amount'], 'msg': 'Field required', 'input': {}}, {'type': 'missing', 'loc': ['body', 'attempt_number'], 'msg': 'Field required', 'input': {}}, {'type': 'missing', 'loc': ['body', 'risk_score'], 'msg': 'Field required', 'input': {}}, {'type': 'missing', 'loc': ['bod",
+      "error": null
+    },
+    {
+      "case": "null_body",
+      "description": "null JSON body",
+      "status": 422,
+      "classification": "expected_reject",
+      "ms": 6.057499998860294,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': [{'type': 'missing', 'loc': ['body'], 'msg': 'Field required', 'input': None}]}",
+      "error": null
+    }
+  ],
+  "audit_boundary": [
+    {
+      "case": "audit_empty_txn",
+      "description": "empty transaction_id",
+      "status": 404,
+      "ms": 3.434799999013194,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': 'Not Found'}",
+      "error": null
+    },
+    {
+      "case": "audit_10k_chars",
+      "description": "10,000+ char transaction_id",
+      "status": 200,
+      "ms": 18.488600000637234,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "error": null
+    },
+    {
+      "case": "audit_unicode",
+      "description": "unicode transaction_id",
+      "status": 200,
+      "ms": 7.0393999994848855,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': '\u4ea4\u6613-\ud83d\udd25-\u0442\u0435\u0441\u0442', 'records': [{'trace_id': 'f38b1a42-19ed-47f7-96f3-594406324100', 'timestamp': '2026-08-28T17:55:36.627268Z', 'transaction_id': '\u4ea4\u6613-\ud83d\udd25-\u0442\u0435\u0441\u0442', 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'policy_version': 'v1.0', 'model_version': 'M2_logistic_regression', 'decision_engine_version': 'v1.0', 'rules_fired': [], 'escalation_required': False, 'terminal': False, 'selected_ev': 512.7724614442475, 'selec",
+      "error": null
+    },
+    {
+      "case": "audit_sql_injection",
+      "description": "SQL injection attempt",
+      "status": 200,
+      "ms": 5.838499999299529,
+      "has_traceback_leak": false,
+      "body_snippet": "{'transaction_id': \"'; DROP TABLE decisions;--\", 'records': [{'trace_id': '534dc6b5-02b7-40d8-9bee-c28e113b268f', 'timestamp': '2026-08-28T17:55:36.703001Z', 'transaction_id': \"'; DROP TABLE decisions;--\", 'selected_action': 'discount', 'decision_type': 'ev_optimization', 'decision_reason': 'highest_expected_net_value', 'policy_version': 'v1.0', 'model_version': 'M2_logistic_regression', 'decision_engine_version': 'v1.0', 'rules_fired': [], 'escalation_required': False, 'terminal': False, 'selec",
+      "error": null
+    },
+    {
+      "case": "audit_path_traversal",
+      "description": "path traversal",
+      "status": 404,
+      "ms": 2.9226000006019603,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': 'Not Found'}",
+      "error": null
+    },
+    {
+      "case": "audit_null_bytes",
+      "description": "null bytes",
+      "status": null,
+      "ms": 0.11089999861724209,
+      "has_traceback_leak": false,
+      "body_snippet": null,
+      "error": "InvalidURL: Invalid non-printable ASCII character in URL, '\\x00' at position 11."
+    },
+    {
+      "case": "audit_special_chars",
+      "description": "HTML/XSS in transaction_id",
+      "status": 404,
+      "ms": 2.8901000005134847,
+      "has_traceback_leak": false,
+      "body_snippet": "{'detail': 'Not Found'}",
+      "error": null
+    }
+  ],
+  "summary": {
+    "total_decide_cases": 53,
+    "total_audit_cases": 7,
+    "unexpected_500_count": 0,
+    "unexpected_500_cases": [],
+    "traceback_leak_count": 0,
+    "traceback_leak_cases": [],
+    "decide_by_classification": {
+      "expected_accept": 36,
+      "expected_reject": 17
+    },
+    "audit_by_status": {
+      "404": 3,
+      "200": 3,
+      "None": 1
+    }
+  }
+}
