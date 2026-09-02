@@ -1,0 +1,7 @@
+{
+  "name": "Revenue Recovery Engine",
+  "description": "AI-powered recovery decision intelligence for evaluating failed payment transactions and optimizing recovery actions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
