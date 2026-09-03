@@ -15,7 +15,7 @@ import {
   DEFAULT_TRANSACTION,
   INITIAL_SESSION_ACTIVITY,
 } from './data/mockData';
-import { requestDecision, ApiError } from './api/recoveryClient';
+import { requestDecision, fetchAudit, ApiError } from './api/recoveryClient';
 import {
   ActiveTab,
   AuditRecord,
@@ -71,6 +71,20 @@ export default function App() {
     try {
       const newDecision = await requestDecision(targetInput);
       setDecision(newDecision);
+
+      // Fetch the real audit record written by the backend for this transaction.
+      // Non-blocking: a 404 (no record yet) or network failure must never affect
+      // the displayed decision result. New rows are prepended; traceId deduplicates.
+      try {
+        const auditRows = await fetchAudit(targetInput.transactionId);
+        setAuditRecords((prev) => {
+          const existingIds = new Set(prev.map((r) => r.traceId));
+          const newRows = auditRows.filter((r) => !existingIds.has(r.traceId));
+          return newRows.length > 0 ? [...newRows, ...prev] : prev;
+        });
+      } catch {
+        // Audit fetch failure is intentionally swallowed — decision result is unaffected.
+      }
 
       // Append to session activity log
       const evDisplay = newDecision.expectedValue !== null
