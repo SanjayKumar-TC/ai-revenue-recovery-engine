@@ -2,6 +2,14 @@
 
 from __future__ import annotations
 
+# Load .env into os.environ before any module that reads env vars (e.g. email_report).
+# This is a no-op when python-dotenv is absent or .env does not exist.
+try:
+    from dotenv import load_dotenv as _load_dotenv
+    _load_dotenv(override=False)   # never overwrite vars already set in the shell
+except ImportError:
+    pass  # dotenv optional — env vars can be set externally
+
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
@@ -16,8 +24,11 @@ from api.schemas import (
     AuditLookupResponse,
     DecideRequest,
     DecideResponse,
+    EmailReportRequest,
+    EmailReportResponse,
     HealthResponse,
 )
+from api.email_report import send_report_email
 from ml.audit.audit_writer import DEFAULT_DB_PATH
 from ml.decision.decision_engine import load_model
 
@@ -74,6 +85,25 @@ def create_app(audit_db_path: str | None = None, model_pipeline=None) -> FastAPI
             "transaction_id": transaction_id,
             "records": records,
         }
+
+    @application.post("/report/email", response_model=EmailReportResponse)
+    def email_report(body: EmailReportRequest):
+        """Send a structured decision report to the configured Gmail address.
+
+        The communication.message_body is forwarded verbatim from the caller.
+        It is never rewritten, generated, or substituted inside this endpoint.
+        The email explicitly states the customer message was NOT delivered.
+        """
+        try:
+            send_report_email(body.model_dump())
+        except RuntimeError as exc:
+            raise HTTPException(status_code=500, detail=str(exc))
+        except Exception:
+            raise HTTPException(
+                status_code=500,
+                detail="Failed to send email report. Check SMTP credentials and connectivity.",
+            )
+        return {"sent": True}
 
     return application
 

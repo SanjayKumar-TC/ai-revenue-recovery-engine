@@ -323,3 +323,56 @@ export async function fetchAudit(transactionId: string): Promise<AuditRecord[]> 
   const data = await handleResponse<BackendAuditLookupResponse>(res, `GET ${endpoint}`);
   return normalizeAuditResponse(data);
 }
+
+/**
+ * POST /report/email
+ * Sends the full decision report to the configured Gmail address.
+ *
+ * The communication.message_body is sourced from decision.communication.message
+ * (the normalised backend value) and forwarded verbatim — it is never
+ * rewritten or fabricated inside this function.
+ *
+ * amount and failure_type come from the original TransactionInput so the
+ * email can show the transaction context alongside the decision.
+ *
+ * Throws ApiError on HTTP 500 (SMTP failure, missing credentials, etc.).
+ */
+export async function sendEmailReport(
+  decision: DecisionResult,
+  input: TransactionInput,
+): Promise<void> {
+  const body = {
+    transaction_id:      input.transactionId.trim(),
+    trace_id:            decision.traceId || null,
+    selected_action:     decision.action,
+    decision_type:       decision.decisionType,
+    decision_reason:     decision.reasoning,
+    escalation_required: decision.escalation === 'Required',
+    terminal:            decision.terminal === 'Yes',
+    selected_ev:         decision.expectedValue,
+    selected_probability: decision.recoveryProbability !== null
+                            ? decision.recoveryProbability / 100   // UI is %, backend wants 0-1
+                            : null,
+    policy_version:      decision.policyVersion,
+    amount:              Number(input.amount),
+    failure_type:        input.failureType,
+    communication: {
+      sendable:      decision.communication.sendable,
+      channel:       decision.communication.channel,
+      // message is the verbatim backend message_body stored in DecisionResult.
+      // It is forwarded as-is; null/empty is preserved.
+      message_body:  decision.communication.message || null,
+      fallback_used: decision.communication.fallback === 'Fallback Used',
+    },
+  };
+
+  const res = await fetch('/report/email', {
+    method:  'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept:         'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+  await handleResponse<{ sent: boolean }>(res, 'POST /report/email');
+}

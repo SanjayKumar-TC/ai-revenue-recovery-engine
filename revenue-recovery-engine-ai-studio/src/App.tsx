@@ -15,7 +15,7 @@ import {
   DEFAULT_TRANSACTION,
   INITIAL_SESSION_ACTIVITY,
 } from './data/mockData';
-import { requestDecision, fetchAudit, ApiError } from './api/recoveryClient';
+import { requestDecision, fetchAudit, sendEmailReport, ApiError } from './api/recoveryClient';
 import {
   ActiveTab,
   AuditRecord,
@@ -271,6 +271,15 @@ export default function App() {
                       decision={decision}
                       isLoading={isProcessing}
                       onRunDecision={() => handleRunDecision()}
+                      onSendEmailReport={decision ? async () => {
+                        try {
+                          await sendEmailReport(decision, transactionInput);
+                          showToast('Email report sent to configured Gmail address');
+                        } catch {
+                          showToast('Failed to send email report — check backend/SMTP');
+                          throw new Error('email send failed');
+                        }
+                      } : undefined}
                     />
 
                     {/* Customer Communication Panel */}

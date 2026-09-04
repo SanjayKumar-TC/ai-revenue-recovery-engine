@@ -72,3 +72,39 @@ class AuditRecordOut(BaseModel):
 class AuditLookupResponse(BaseModel):
     transaction_id: str
     records: list[AuditRecordOut] = Field(default_factory=list)
+
+
+# ── Email Report ──────────────────────────────────────────────────────────────
+
+class EmailReportCommunication(BaseModel):
+    """Communication sub-object forwarded verbatim from the decision response."""
+    sendable: bool
+    channel: Optional[str] = None
+    message_body: Optional[str] = None   # passed through as-is; never fabricated
+    fallback_used: bool
+
+
+class EmailReportRequest(BaseModel):
+    """Request body for POST /report/email.
+
+    All fields are sourced directly from the POST /decide response — no
+    business logic is applied here. message_body is passed verbatim and is
+    never rewritten or substituted.
+    """
+    transaction_id: str
+    trace_id: Optional[str] = None
+    selected_action: str
+    decision_type: str
+    decision_reason: str
+    escalation_required: bool
+    terminal: bool
+    selected_ev: Optional[float] = None
+    selected_probability: Optional[float] = None
+    policy_version: str
+    amount: Optional[float] = None
+    failure_type: Optional[str] = None
+    communication: EmailReportCommunication
+
+
+class EmailReportResponse(BaseModel):
+    sent: bool

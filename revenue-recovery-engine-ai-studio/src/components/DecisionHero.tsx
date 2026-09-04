@@ -11,6 +11,8 @@ import {
   HelpCircle,
   Info,
   Link2,
+  Loader2,
+  Mail,
   RefreshCw,
   Scale,
   Shield,
@@ -25,14 +27,31 @@ interface DecisionHeroProps {
   decision: DecisionResult | null;
   isLoading: boolean;
   onRunDecision: () => void;
+  onSendEmailReport?: () => Promise<void>;
 }
 
 export const DecisionHero: React.FC<DecisionHeroProps> = ({
   decision,
   isLoading,
   onRunDecision,
+  onSendEmailReport,
 }) => {
   const [copiedTrace, setCopiedTrace] = useState(false);
+  // 'idle' | 'sending' | 'sent' | 'failed'
+  const [emailState, setEmailState] = useState<'idle' | 'sending' | 'sent' | 'failed'>('idle');
+
+  const handleSendEmail = async () => {
+    if (!onSendEmailReport || emailState === 'sending') return;
+    setEmailState('sending');
+    try {
+      await onSendEmailReport();
+      setEmailState('sent');
+    } catch {
+      setEmailState('failed');
+    } finally {
+      setTimeout(() => setEmailState('idle'), 3000);
+    }
+  };
 
   const handleCopyTrace = () => {
     if (!decision) return;
@@ -181,6 +200,33 @@ export const DecisionHero: React.FC<DecisionHeroProps> = ({
         </div>
 
         <div className="flex items-center gap-2">
+          {/* Send Email Report button */}
+          {onSendEmailReport && (
+            <button
+              id="send-email-report-button"
+              onClick={handleSendEmail}
+              disabled={emailState === 'sending'}
+              title="Send decision report to configured Gmail address"
+              className={`flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-[11px] font-mono transition-colors ${
+                emailState === 'sent'
+                  ? 'border-emerald-500/50 bg-emerald-950/30 text-emerald-400'
+                  : emailState === 'failed'
+                  ? 'border-rose-500/50 bg-rose-950/30 text-rose-400'
+                  : 'border-[#E8A33D]/40 bg-[#161C26] text-[#F3C06B] hover:bg-[#1C2431]'
+              } disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer`}
+            >
+              {emailState === 'sending' ? (
+                <><Loader2 className="h-3 w-3 animate-spin" /><span>Sending…</span></>
+              ) : emailState === 'sent' ? (
+                <><Check className="h-3 w-3" /><span>Sent ✓</span></>
+              ) : emailState === 'failed' ? (
+                <><span>Failed ✗</span></>
+              ) : (
+                <><Mail className="h-3 w-3" /><span>Email Report</span></>
+              )}
+            </button>
+          )}
+
           <button
             onClick={handleCopyTrace}
             title="Copy Trace Identifier"

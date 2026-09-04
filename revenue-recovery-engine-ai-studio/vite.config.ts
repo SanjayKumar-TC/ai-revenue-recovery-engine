@@ -19,9 +19,10 @@ export default defineConfig(() => {
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
       // M8 backend proxy — forwards API calls to the real FastAPI server.
       proxy: {
-        '/health': { target: 'http://127.0.0.1:8000', changeOrigin: true },
-        '/decide': { target: 'http://127.0.0.1:8000', changeOrigin: true },
-        '/audit':  { target: 'http://127.0.0.1:8000', changeOrigin: true },
+        '/health':  { target: 'http://127.0.0.1:8000', changeOrigin: true },
+        '/decide':  { target: 'http://127.0.0.1:8000', changeOrigin: true },
+        '/audit':   { target: 'http://127.0.0.1:8000', changeOrigin: true },
+        '/report':  { target: 'http://127.0.0.1:8000', changeOrigin: true },
       },
     },
   };
